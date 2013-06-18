@@ -1,4 +1,4 @@
 cikasfm.github.com
 ==================
 
-[cikasfm.github.com] website
+http://cikasfm.github.com website
