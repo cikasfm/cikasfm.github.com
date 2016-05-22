@@ -21,6 +21,14 @@
         background-repeat: no-repeat;
         background-size: 100%;
       }
+      #map {
+        height: 100%;
+        min-height: 300px;
+        z-index: 200;
+      }
+      .map .img-thumbnail {
+        margin-top: 16px;
+      }
     </style>
 
     <!--[if lt IE 9]>
@@ -57,15 +65,21 @@
     <div class="jumbotron">
       <div class="container">
         <h1>Zilvinas Vilutis</h1>
-        <p>Dedicated engineer and software architect. Dad. Husband. Maker. iRacer</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        <small>Dedicated engineer and software architect. Dad. Husband. Maker. iRacer</small>
+        <p>
+          Hi! My name is Zilvinas Vilutis and I'm a Software Architect for Enterprise Web Applications based in Bay Area.
+        </p>
+        <p><a class="btn btn-primary btn-lg" href="#about" role="button">Learn more &raquo;</a></p>
       </div>
     </div>
 
     
     <div class="container">
-      <h1>About me</h1>
-      <p>tbd</p>
+      <h1 id="about">About me</h1>
+      <p>For the last 10+ years I've been designing, implementing, deploying &amp; testing Enterprise Web Applications based on JAVA stack.
+        I'm creating code, database, integration, SOAP/REST service and infrastructure design.
+        Configure and hack Spring context. Apart from JAVA, HQL/SQL and XML I will write HTML+CSS and JS when needed.</p>
+      <p>I come from a small country Lithuania in Eastern Europe.</p>
     </div>
     
     
@@ -469,16 +483,88 @@
           </div>
         </div>
       </div>
-
+    </div>
+    
+    <div class="container">
+      <h1 id="contact">Contact Me</h1>
+    </div>
+    
+    <div class="container-fluid">
+        <!-- Google Maps canvas -->
+        <div id="map"></div>
+    </div>
+    
+    <div class="map container">
+      <img class="img img-thumbnail" src="http://1.gravatar.com/avatar/4dc36423f5990641c697ed0fa285530d?s=100"/>
+      <address>
+        <strong>Zilvinas Vilutis</strong><br>
+        <abbr title="Phone">P:</abbr> <a href="tel:4158023508">(415) 802-3508</a><br>
+        <a href="mailto:zilvinas@vilutis.lt">zilvinas@vilutis.lt</a>
+      </address>
+    </div>
+    
+    <div class="container">
       <hr>
-
       <footer>
-        <p>&copy; 2015 Company, Inc.</p>
+        <p>2016 Zilvinas Vilutis</p>
       </footer>
     </div> <!-- /container -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    
+    <!-- Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+    <script type="text/javascript">
+    <!--
+    function initMap() {
+      
+      var loc = {lat: 38.0863672, lng: -122.5807967};
+      // Specify features and elements to define styles.
+      var styleArray = [
+        {
+          featureType: "all",
+          stylers: [
+           { saturation: -80 }
+          ]
+        },{
+          featureType: "road.arterial",
+          elementType: "geometry",
+          stylers: [
+            { hue: "#000000" },
+            { saturation: -100 },
+            { lightness: -100 },
+            { visibility: "off" }
+          ]
+        },{
+          featureType: "poi.business",
+          elementType: "labels",
+          stylers: [
+            { saturation: -100 },
+            { lightness: -100 },
+            { visibility: "off" }
+          ]
+        }
+      ];
 
+      // Create a map object and specify the DOM element for display.
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: loc,
+        scrollwheel: false,
+        // Apply the map style array to the map.
+        styles: styleArray,
+        zoom: 10
+      });
+      
+      // Create a marker and set its position.
+      var marker = new google.maps.Marker({
+        map: map,
+        position: loc
+      });
+    };
+    
+    google.maps.event.addDomListener(window, 'load', initMap);
+    //-->
+    </script>
   </body>
 </html>
