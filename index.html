@@ -16,6 +16,11 @@
     <style>
       body { font-family: 'Merriweather', serif; }
       .rating { font-size: 2em; }
+      h1 { margin-top: 50px}
+      .company {
+        background-repeat: no-repeat;
+        background-size: 100%;
+      }
     </style>
 
     <!--[if lt IE 9]>
@@ -24,6 +29,29 @@
     <![endif]-->
   </head>
   <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand text-uppercase" href="#">Zilvinas Vilutis</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#exp">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="http://blog.vilutis.lt">Blog</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
@@ -34,15 +62,252 @@
       </div>
     </div>
 
+    
     <div class="container">
+      <h1>About me</h1>
+      <p>tbd</p>
+    </div>
+    
+    
+    <div class="container">
+      <h1>I've worked with</h1>
       <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-xs-12">
+          <div class="row">
+            <div class="col-sm-3 col-sm-offset-0 col-xs-4 col-xs-offset-2">
+              <img class="img img-responsive" alt="EIS Group Logo" src="res/img/logo-eis-group.png" />
+            </div>
+            <div class="col-sm-3 col-xs-4">
+              <img class="img img-responsive" alt="Liberty Mutual Logo" src="res/img/logo-lmb.jpg  " />
+            </div>
+            <div class="col-sm-3 col-sm-offset-0 col-xs-4 col-xs-offset-2">
+              <img class="img img-responsive" alt="Return on Intellingence Logo" src="res/img/logo-roi.png" />
+            </div>
+            <div class="col-sm-3 col-xs-4">
+              <img class="img img-responsive" alt="AIG Logo" src="res/img/logo-aig.png" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3 col-sm-offset-0 col-xs-4 col-xs-offset-2">
+              <img class="img img-responsive" alt="Exigen Services Logo" src="res/img/logo-exigen-services.png" />
+            </div>
+            <div class="col-sm-3 col-xs-4">
+              <img class="img img-responsive" alt="AAA Logo" src="res/img/logo-aaa.jpg  " />
+            </div>
+            <div class="col-sm-3 col-sm-offset-0 col-xs-4 col-xs-offset-2">
+              <img class="img img-responsive" alt="Hollard Logo" src="res/img/logo-hollard.png" />
+            </div>
+            <div class="col-sm-3 col-xs-4">
+              <img class="img img-responsive" alt="Real Insurance Logo" src="res/img/logo-real-ins.jpg" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="container">
+      <h1 id="exp">Experience</h1>
+      <div class="row company" style="background-image: url('res/img/bg-345-calif.jpg');">
+        <div class="col-md-4">
+          <h2>Company</h2>
+          <h3>EIS Group</h3>
+          <div class="col-xs-4">
+            <img class="img img-responsive img-thumbnail" alt="EIS Group Logo" src="res/img/logo-eis-group.png" />
+            <dl class="small">
+              <dt>Period</dt>
+              <dd>2014-2016</dd>
+              <dt>Location</dt>
+              <dd>San Francisco, California</dd>
+            </dl>
+          </div>
+          <p>
+            EIS Group is renamed from a former Exigen Insurance.
+            Company transformed to software provider, aquiring offices providing services and delivery.
+          </p>
+        </div>
+        <!-- Optional: clear the XS cols if their content doesn't match in height -->
+        <div class="clearfix visible-sm-block"></div>
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-sm-6">
+              <h2>Project</h2>
+              <p>
+                R&amp;D
+              </p>
+              <h3>Tasks &amp; Responsibilities</h3>
+              <p>
+                
+              </p>
+              <ul>
+                <li>Requirements analysis &amp; estimation</li>
+                <li>Design &amp; Implementation</li>
+                <li>Code Review</li>
+                <li>Team Mentoring</li>
+              </ul>
+              <h4>Achievements</h4>
+              <ul>
+                <li>TBD</li>
+              </ul>
+           </div>
+           <div class="clearfix visible-xs-block"></div>
+            <div class="col-sm-6">
+              <h2>Skills</h2>
+              <h3>Back-End</h3>
+              <ul class="list-unstyled">
+                <li>
+                  <img class="img img-responsive col-xs-4" alt="J2EE Logo" src="res/img/logo-java.png" />
+                  <div class="rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>
+                  </div>
+                  <div class="clearfix"></div>
+                </li>
+                <li>
+                  <img class="img img-responsive col-xs-4" alt="Hibernate Logo" src="res/img/logo-hibernate.png" />
+                  <div class="rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>
+                  </div>
+                  <div class="clearfix"></div>
+                </li>
+                <li>
+                  <img class="img img-responsive col-xs-4" alt="Spring Logo" src="res/img/logo-spring.png" />
+                  <div class="rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                  </div>
+                  <div class="clearfix"></div>
+                </li>
+                <li>
+              </ul>
+              <h3>Tech. used</h3>
+              <ul>
+                <li>Tomcat Application Server</li>
+                <li>MS SQL&copy; Database</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <hr/>
+      
+      
+      <div class="row company" style="background-image: url('res/img/bg-eis-vilnius.jpg')">
+        <div class="col-md-4">
+          <h2>Company</h2>
+          <h3>EIS Group</h3>
+          <div class="col-xs-4">
+            <img class="img img-responsive img-thumbnail" alt="EIS Group Logo" src="res/img/logo-eis-group.png" />
+            <dl class="small">
+              <dt>Period</dt>
+              <dd>2013-2014</dd>
+              <dt>Location</dt>
+              <dd>Vilnius, Lithuania</dd>
+            </dl>
+          </div>
+          <p>
+            EIS Group is renamed from a former Exigen Insurance.
+            Company transformed to software provider, aquiring offices providing services and delivery.
+          </p>
+          <div class="clearfix"></div>
+          <h3>Return on Intelligence</h3>
+          <div class="col-xs-4">
+            <img class="img img-responsive img-thumbnail" alt="Return on Intelligence Logo" src="res/img/logo-roi.png" />
+            <dl class="small">
+              <dt>Period</dt>
+              <dd>2012-2013</dd>
+              <dt>Location</dt>
+              <dd>Vilnius, Lithuania</dd>
+            </dl>
+          </div>
+          <p>
+            Exigen Services now aquired by Returned on Intelligence and we work under a different name, while providing services to Exigen Insurance.
+            Global company restructuring, buying &amp; selling different offices worldwide and changing business directions.
+            Focusing on different types of customers, not only P&amp;C Insurance, but also Group Benefits, Commercial Lines and others.
+          </p>
+        </div>
+        <!-- Optional: clear the XS cols if their content doesn't match in height -->
+        <div class="clearfix visible-sm-block"></div>
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-sm-6">
+              <h2>Project</h2>
+              <h3>Group Benefits Insurance</h3>
+              <p>
+                This was a proof of concept project template for potential Group Benefits Insurance product(s) and customers.
+                Many new challenges appeared due to not only highly different insurance model but also volume.
+              </p>
+              <h3>Tasks &amp; Responsibilities</h3>
+              <p>
+                Responsible for product implementation and customization design, developer and contractor support.
+                Requirements analysis, estimation, design, developers support, code review &amp; some parts of implementation.
+              </p>
+              <ul>
+                <li>Requirements analysis &amp; estimation</li>
+                <li>Design &amp; Implementation</li>
+                <li>Code Review</li>
+                <li>Team Mentoring</li>
+              </ul>
+              <h4>Achievements</h4>
+              <ul>
+                <li>Policy Domain Model design for Group Benefits market</li>
+                <li>Policy Premium Domain design for Group Benefits market</li>
+                <li>Dynamic UI Plugin module design &amp; implementation</li>
+              </ul>
+           </div>
+           <div class="clearfix visible-xs-block"></div>
+            <div class="col-sm-6">
+              <h2>Skills</h2>
+              <h3>Back-End</h3>
+              <ul class="list-unstyled">
+                <li>
+                  <img class="img img-responsive col-xs-4" alt="J2EE Logo" src="res/img/logo-java.png" />
+                  <div class="rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>
+                  </div>
+                  <div class="clearfix"></div>
+                </li>
+                <li>
+                  <img class="img img-responsive col-xs-4" alt="Hibernate Logo" src="res/img/logo-hibernate.png" />
+                  <div class="rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>
+                  </div>
+                  <div class="clearfix"></div>
+                </li>
+                <li>
+                  <img class="img img-responsive col-xs-4" alt="Spring Logo" src="res/img/logo-spring.png" />
+                  <div class="rating">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                  </div>
+                  <div class="clearfix"></div>
+                </li>
+                <li>
+              </ul>
+              <h3>Tech. used</h3>
+              <ul>
+                <li>Tomcat Application Server</li>
+                <li>MS SQL&copy; Database</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <hr/>      
+      
+      
+      <div class="row company" style="background-image: url('res/img/bg-aaa.jpg')">
         <div class="col-md-4">
           <h2>Company</h2>
           <h3>Exigen Services</h3>
-          <div class="col-xs-4">
-            <img class="img img-responsive" alt="Exigen Services Logo" src="res/img/logo-exigen-services.png" />
-            <p class="text-center"><small>2010-2012</small></p>
-          </div>
+            <div class="col-xs-4 pull-left">
+              <img class="img img-responsive img-thumbnail" alt="Exigen Services Logo" src="res/img/logo-exigen-services.png" />
+              <dl class="small">
+                <dt>Period</dt>
+                <dd>2010-2012</dd>
+                <dt>Location</dt>
+                <dd>Glendale, Arizona</dd>
+              </dl>
+            </div>
           <p>
             Interestingly this was mostly work on-site in AAA office in Glendale, Arizona.
           </p>
@@ -51,26 +316,35 @@
         <div class="clearfix visible-sm-block"></div>
         <div class="col-md-8">
           <div class="row">
-            <div class="col-md-6 col-sm-6">
+            <div class="col-sm-6">
               <h2>Project</h2>
               <h3>AAA CSAA NCNU</h3>
-              <img class="img img-responsive col-xs-4 pull-left" alt="AAA Logo" src="res/img/logo-aaa.jpg" />
-              <p>America's Automobile Association ( AAA ) had one of the biggest IT infrastructures I've ever seen which <b>core</b> we were about to replace.</p>
+              <div class="col-xs-4">
+                <img class="img img-responsive img-thumbnail" alt="AAA Logo" src="res/img/logo-aaa.jpg" />
+              </div>
+              <p>America's Automobile Association ( AAA ) had one of the most challenging products I've ever worked on
+                as it had one of the biggest IT infrastructure I've ever seen which <b>core</b> we were about to replace.</p>
               <h3>Tasks &amp; Responsibilities</h3>
               <p>
                 Responsible for product implementation and customization design, developer and contractor support. Requirements analysis, estimation
               </p>
+              <ul>
+                <li>Requirements analysis &amp; estimation</li>
+                <li>Design &amp; Implementation</li>
+                <li>Code Review</li>
+                <li>Team Mentoring</li>
+                <li>Performance testing &amp; optimization</li>
+              </ul>
               <h4>Achievements</h4>
               <ul>
                 <li>OpenL Tablets Rating Engine integration and configuration</li>
                 <li>Policy Premium Variation Domain &amp; Integration Design</li>
                 <li>Design &amp; implementation of Single Sign-On integration with Ping Identity</li>
                 <li>Customization of Billing &amp; Payments subsystem integration</li>
-                <li>Performance testing &amp; optimization</li>
               </ul>
            </div>
            <div class="clearfix visible-xs-block"></div>
-            <div class="col-md-6 col-sm-6">
+            <div class="col-sm-6">
               <h2>Skills</h2>
               <h3>Back-End</h3>
               <ul class="list-unstyled">
@@ -115,12 +389,16 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      
+      <hr/>      
+      
+      
+      <div class="row company" style="background-image: url('res/img/bg-eis-vilnius.jpg');">
         <div class="col-md-4">
           <h2>Company</h2>
           <h3>Exigen Services Vilnius</h3>
           <div class="col-xs-4">
-            <img class="img img-responsive" alt="Exigen Services Logo" src="res/img/logo-exigen-services.png" />
+            <img class="img img-responsive img-thumbnail" alt="Exigen Services Logo" src="res/img/logo-exigen-services.png" />
             <dl>
               <dt>Period</dt>
               <dd>2007-2009</dd>
@@ -136,11 +414,11 @@
         <div class="clearfix visible-sm-block"></div>
         <div class="col-md-8">
           <div class="row">
-            <div class="col-md-6 col-sm-6">
+            <div class="col-sm-6">
               <h2>Project</h2>
               <h3>IPB Hollard</h3>
               <div class="col-xs-4 pull-left">
-                <img class="img img-responsive" alt="Exigen Services Logo" src="res/img/logo-hollard.png" />
+                <img class="img img-responsive img-thumbnail" alt="Exigen Services Logo" src="res/img/logo-hollard.png" />
               </div>  
               <p>An innovative australian insurance company one of the first ( or actually the first ) one to provide a <b>P</b>ay-<b>A</b>s-<b>Y</b>ou-<b>D</b>rive ( PAYD &reg;) product for auto insurance industry.</p>
               <h4>Tasks &amp; Responsibilities</h4>
@@ -149,7 +427,7 @@
               <p>That was the time I learned and designed complicated acurate financial calculations, different rounding rules and other financial requirements.<p>
            </div>
            <div class="clearfix visible-xs-block"></div>
-            <div class="col-md-6 col-sm-6">
+            <div class="col-sm-6">
               <h2>Skills</h2>
               <h3>Back-End</h3>
               <ul class="list-unstyled">
