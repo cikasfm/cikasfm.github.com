@@ -1,0 +1,10 @@
+# temporary files
+*.patch
+*.diff
+*.orig
+*.sw?
+.#*
+*#
+*~
+/node_modules/
+/bower_components/
