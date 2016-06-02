@@ -57,6 +57,14 @@ p {
 
 .text-faded {
     color: fade(white, 70%);
+    a {
+        .transition-all;
+        color: fade(white, 90%);
+        &:hover,
+        &:focus {
+          color: white;
+        }
+    }
 }
 
 section {
