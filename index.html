@@ -64,7 +64,7 @@
 
 </head>
 
-<body id="page-top">
+<body itemscope itemtype="http://schema.org/Person">
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -76,7 +76,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Zilvinas Vilutis</a>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                  <span itemprop="name">Zilvinas Vilutis</span>
+                </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -104,12 +106,12 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <header>
+    <header id="page-top">
         <div class="header-content">
             <div class="header-content-inner">
                 <h1>Hi, my name is Zilvinas</h1>
                 <hr>
-                <p>I'm a Software Architect for Enterprise Web Applications based in Bay Area</p>
+                <p itemprop="description">I'm a <span itemprop="jobtitle">Software Architect</span> for Enterprise Web Applications based in Bay Area</p>
                 <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
             </div>
         </div>
@@ -442,21 +444,23 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Let's Get In Touch!</h2>
                     <hr class="primary">
-                    <p class="text-center"><a href="https://www.linkedin.com/in/zvilutis"><i class="fa fa-linkedin"></i></a> Please visit my <a href="https://www.linkedin.com/in/zvilutis">LinkedIn profile</a> to see my full resume</p>
+                    <p class="text-center"><a href="https://www.linkedin.com/in/zvilutis"><i class="fa fa-linkedin"></i></a>
+                      Please visit my <a href="https://www.linkedin.com/in/zvilutis">LinkedIn profile</a> to see my full resume</p>
                     <p><img class="img img-rounded" src="http://www.gravatar.com/avatar/4dc36423f5990641c697ed0fa285530d?s=220"/></p>
                     <ul class="list-inline social-buttons">
                         <li><a href="https://twitter.com/cikasfm"><i class="fa fa-twitter"></i></a></li>
                         <li><a href="https://www.facebook.com/cikasfm"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="https://www.linkedin.com/in/zvilutis"><i class="fa fa-linkedin"></i></a></li>
                     </ul>
+                    <a href="http://cikasfm.github.io" itemprop="url" class="sr-only">http://cikasfm.github.io</a>
                 </div>
                 <div class="col-lg-4 col-lg-offset-2 text-center">
                     <i class="fa fa-phone fa-3x wow bounceIn"></i>
-                    <p><abbr title="Phone">P:</abbr> <a href="tel:4158023508">(415) 802-3508</a><br></p>
+                    <p><abbr title="Phone">P:</abbr> <a href="tel:4158023508"><span itemprop="telephone">(415) 802-3508</span></a><br></p>
                 </div>
                 <div class="col-lg-4 text-center">
                     <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p><a href="mailto:zilvinas@vilutis.lt">zilvinas@vilutis.lt</a></p>
+                    <p><a href="mailto:zilvinas@vilutis.lt"><span itemprop="email">zilvinas@vilutis.lt</span></a></p>
                 </div>
             </div>
         </div>
