@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" fill="none">
+  <!-- Macy's Red Star -->
+  <polygon points="18,5 22,16 34,16 24,23 28,34 18,27 8,34 12,23 2,16 14,16" fill="#E11A2B"/>
+  <!-- Text: macys -->
+  <text x="44" y="27" font-family="'Inter', sans-serif" font-weight="700" font-size="22" fill="currentColor" letter-spacing="-0.03em">macy's</text>
+</svg>

@@ -1,513 +1,920 @@
 <!DOCTYPE html>
-<html lang="en" prefix="og: http://ogp.me/ns#">
+<html lang="en" data-theme="dark">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <meta name="author" content="Zilvinas Vilutis">
-    <meta name="description" content="Software Architect for Enterprise Web Applications based in Bay Area">
-    <meta name="keywords" content="zilvinas vilutis, software architect, technical leadership, business solutions, data architecture, architect, java, spring, hibernate, jsf, security, oracle, mssql, postrgresql, uml, tomcat, jboss, websphere" />
-    
-    <meta property="og:url" content="http://zilvinas.vilutis.lt" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Zilvinas Vilutis" />
-    <meta property="og:description" content="Software Architect for Enterprise Web Applications based in Bay Area." />
-    <meta property="og:image" content="http://www.gravatar.com/avatar/4dc36423f5990641c697ed0fa285530d?s=650" />
-    
-    <meta name="msapplication-TileColor" content="#f05f40">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#f05f40">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Zilvinas Vilutis</title>
-    
-    <link rel="apple-touch-icon" sizes="57x57" href="ico/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="ico/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="ico/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="ico/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="ico/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="ico/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="ico/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="ico/apple-icon-152x152.png">
+    <title>Zilvinas Vilutis | Staff Software Engineer & Distributed Systems Architect</title>
+    <meta name="author" content="Zilvinas Vilutis">
+    <meta name="description" content="Zilvinas Vilutis is a Staff Software Engineer & Backend / Distributed Systems Architect with 20+ years of experience spanning Sony, Okta, Intuit, Grid Dynamics, and EIS Group. Based in San Diego, CA.">
+    <meta name="keywords" content="Zilvinas Vilutis, Staff Software Engineer, Distributed Systems Architect, Backend Architect, Java, Spring Boot, Go, OpenFGA, Kafka, AWS, Kubernetes, EKS, Kong, San Diego, DevThin, High-Throughput Microservices">
+
+    <!-- Open Graph / Social Meta -->
+    <meta property="og:url" content="https://zilvinas.vilutis.lt" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Zilvinas Vilutis | Staff Software Engineer & Distributed Systems Architect" />
+    <meta property="og:description" content="20+ years architecting high-throughput distributed systems, zero-to-one token platforms, fine-grained authorization engines, and billion-scale eventing." />
+    <meta property="og:image" content="https://www.gravatar.com/avatar/4dc36423f5990641c697ed0fa285530d?s=650" />
+
+    <meta name="theme-color" content="#030712">
+
+    <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-icon-180x180.png">
-    
-    <link rel="icon" type="image/png" sizes="192x192" href="ico/android-icon-192x192.png">
-    
     <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="ico/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
-    
     <link rel="manifest" href="manifest.json">
 
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Custom Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+    <!-- Custom Modern Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
 
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/creative.min.css" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-
-<body itemscope itemtype="http://schema.org/Person">
-
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
-                  <span itemprop="name">Zilvinas Vilutis</span>
-                </a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Services</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/in/zvilutis">Resume&nbsp;<i class="fa fa-external-link-square"></i></a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-    <header id="page-top">
-        <div class="header-content">
-            <div class="header-content-inner">
-                <h1>Hi, my name is Zilvinas</h1>
-                <hr>
-                <p itemprop="description">I'm a <span itemprop="jobtitle">Software Architect</span> for Enterprise Web Applications based in Bay Area</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
-            </div>
-        </div>
-    </header>
-
-    <section class="bg-primary" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">About me</h2>
-                    <hr class="light">
-                    <p class="text-faded">For the last 10+ years I've been designing, implementing, deploying &amp; testing Enterprise Web Applications based on JAVA stack.
-                      I'm creating code, database, integration, SOAP/REST service and infrastructure design.
-                      Configure and hack Spring context. Apart from JAVA, HQL/SQL and XML I will write HTML+CSS and JS when needed.</p>
-                    <p class="text-faded">I come from <span itemprop="birthPlace">Vilnius, <span itemprop="nationality">Lithuania</span></span>. A city sometimes called
-                      <a href="http://www.forbes.com/sites/kenrapoza/2015/11/08/lithuanias-lofty-silicon-valley-dreams">Silicon Valley of Europe</a>.</p>
-                    <a href="#services" class="btn btn-default btn-xl page-scroll">What I do</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">What I do best</h2>
-                    <hr class="primary">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
-                        <h3>Business Solutions</h3>
-                        <p class="text-muted">Review requirements, talk to analysts and customers to find the best solution</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-edit wow bounceIn text-primary" data-wow-delay=".1s"></i>
-                        <h3>Data Architecture</h3>
-                        <p class="text-muted">Create high and low level design documents for implementation</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-users wow bounceIn text-primary" data-wow-delay=".2s"></i>
-                        <h3>Technical Leadership</h3>
-                        <p class="text-muted">Work with programmers to help them understand the requirements and design, or how find the best ways to implement complicated features.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
-                        <h3>Write code!</h3>
-                        <p class="text-muted">Yes, I love to write code! Fast, smooth and quality</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="bg-primary">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Skills</h2>
-                    <hr class="light">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-3 col-md-6 text-center">
-              <h3>Design</h3>
-              <dl>
-                <dt>UML</dt>
-                <dd><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span></dd>
-                <dt>MagicDraw</dt>
-                <dd><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span><span>&#9734;</span></dd>
-              </dl>
-              <h3>Java Stack</h3>
-              <dl>
-                <dt>JAVA</dt>
-                <dd><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></dd>
-                <dt>J2EE</dt>
-                <dd><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span></dd>
-                <dt>JSF</dt>
-                <dd><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span></dd>
-                <dt>Spring</dt>
-                <dd><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></dd>
-                <dt>Hibernate</dt>
-                <dd><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span></dd>
-              </dl>
-            </div>
-            
-            <div class="col-lg-3 col-md-6 text-center">
-              <h3>Application Servers</h3>
-              <dl>
-                <dt>Tomcat</dt>
-                <dd><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span></dd>
-                <dt>JBOSS</dt>
-                <dd><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span></dd>
-                <dt>WebSphere</dt>
-                <dd><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span></dd>
-              </dl>
-              
-              <h2>OS</h2>
-              <dl>
-                <dt>Windows</dt>
-                <dd><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></dd>
-                <dt>Unix</dt>
-                <dd><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span></dd>
-                <dt>OSX</dt>
-                <dd><span>&#9733;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span></dd>
-              </dl>
-            </div>
-            
-            <div class="col-lg-3 col-md-6 text-center">
-              <h3>PHP Stack</h3>
-              <dl>
-                <dt>PHP</dt>
-                <dd><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span><span>&#9734;</span></dd>
-                <dt>Symfony</dt>
-                <dd><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span><span>&#9734;</span></dd>
-                <dt>Composer</dt>
-                <dd><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span><span>&#9734;</span></dd>
-              </dl>
-              <h3>Database Servers</h3>
-              <dl>
-                <dt>Oracle</dt>
-                <dd><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span></dd>
-                <dt>Microsoft SQL</dt>
-                <dd><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span><span>&#9734;</span></dd>
-                <dt>PostgreSQL</dt>
-                <dd><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span><span>&#9734;</span></dd>
-                <dt>MySQL</dt>
-                <dd><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span><span>&#9734;</span></dd>
-              </dl>
-            </div>
-            
-            <div class="col-lg-3 col-md-6 text-center">
-              <h3>Front-End</h3>
-              <dl>
-                <dt>HTML</dt>
-                <dd><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></dd>
-                <dt>CSS</dt>
-                <dd><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span><span>&#9734;</span></dd>
-                <dt>JS</dt>
-                <dd><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span></dd>
-                <dt>jQuery</dt>
-                <dd><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span><span>&#9734;</span></dd>
-                <dt>AngularJS</dt>
-                <dd><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span><span>&#9734;</span></dd>
-              </dl>
-            </div>
-          </div>
-        </div>
-        <div class="container text-center">
-            <div class="call-to-action">
-                <a href="#portfolio" class="btn btn-default btn-xl wow tada page-scroll">Portfolio</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">I worked for</h2>
-                    <hr class="primary">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row no-gutter">
-                <div class="col-lg-2 col-sm-3 col-xs-8 col-xs-offset-2 col-sm-offset-0 col-lg-offset-2">
-                    <a href="http://www.eisgroup.com" class="portfolio-box">
-                        <img src="img/logos/logo-eis-group.png" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    2014-2016
-                                </div>
-                                <div class="project-name" itemprop="worksFor">
-                                    EIS Group
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-sm-3 col-xs-8 col-xs-offset-2 col-sm-offset-0">
-                    <a href="http://www.exigeninsurance.com" class="portfolio-box">
-                        <img src="img/logos/logo-exigen-insurance.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    2013-2014
-                                </div>
-                                <div class="project-name">
-                                    Exigen Insurance
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-sm-3 col-xs-8 col-xs-offset-2 col-sm-offset-0">
-                    <a href="http://www.returnonintelligence.com" class="portfolio-box">
-                        <img src="img/logos/logo-roi.png" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    2012-2013
-                                </div>
-                                <div class="project-name">
-                                    Return On Intelligence
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-sm-3 col-xs-8 col-xs-offset-2 col-sm-offset-0">
-                    <a href="http://www.exigenservices.com" class="portfolio-box">
-                        <img src="img/logos/logo-exigen-services.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    2007-2012
-                                </div>
-                                <div class="project-name">
-                                    Exigen Services
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="employers">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">I worked with</h2>
-                    <hr class="primary">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row no-gutter">
-                <div class="col-lg-2 col-sm-3 col-xs-8 col-xs-offset-2 col-sm-offset-0 col-lg-offset-2">
-                    <a href="https://www.aaa.com" class="portfolio-box">
-                        <img src="img/logos/logo-aaa.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Project
-                                </div>
-                                <div class="project-name">
-                                    AAA
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-sm-3 col-xs-8 col-xs-offset-2 col-sm-offset-0">
-                    <a href="https://www.hollard.com.au" class="portfolio-box">
-                        <img src="img/logos/logo-hollard.png" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Project
-                                </div>
-                                <div class="project-name">
-                                    Hollard Insurance
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-sm-3 col-xs-8 col-xs-offset-2 col-sm-offset-0">
-                    <a href="https://www.aig.com" class="portfolio-box">
-                        <img src="img/logos/logo-aig.png" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Project
-                                </div>
-                                <div class="project-name">
-                                    AIG Insurance
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                    <div class="col-lg-2 col-sm-3 col-xs-8 col-xs-offset-2 col-sm-offset-0">
-                        <a href="https://www.libertymutual.com/" class="portfolio-box">
-                            <img src="img/logos/logo-lmb.jpg" class="img-responsive" alt="">
-                            <div class="portfolio-box-caption">
-                                <div class="portfolio-box-caption-content">
-                                    <div class="project-category text-faded">
-                                        Project
-                                    </div>
-                                    <div class="project-name">
-                                        Liberty Mutual
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-            </div>
-        </div>
-    </section>
-
-    <aside class="bg-dark">
-        <div class="container text-center">
-            <div class="call-to-action">
-                <a href="#contact" class="btn btn-default btn-xl wow tada page-scroll">Hire me!</a>
-            </div>
-        </div>
-    </aside>
-
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Let's Get In Touch!</h2>
-                    <hr class="primary">
-                    <p class="text-center"><a href="https://www.linkedin.com/in/zvilutis"><i class="fa fa-linkedin"></i></a>
-                      Please visit my <a href="https://www.linkedin.com/in/zvilutis">LinkedIn profile</a> to see my full resume</p>
-                    <p><img class="img img-rounded" src="http://www.gravatar.com/avatar/4dc36423f5990641c697ed0fa285530d?s=220" itemprop="image"/></p>
-                    <a href="http://zilvinas.vilutis.lt" itemprop="url" class="sr-only">http://zilvinas.vilutis.lt</a>
-                    <ul class="list-inline social-buttons">
-                        <li><a href="https://twitter.com/cikasfm" itemprop="sameAs"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="https://www.facebook.com/cikasfm" itemprop="sameAs"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/zvilutis" itemprop="sameAs"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="https://github.com/cikasfm" itemprop="sameAs"><i class="fa fa-github"></i></a></li>
-                        <li><a href="https://plus.google.com/+ZilvinasVilutis" itemprop="sameAs"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="https://instagram.com/cikasfm" itemprop="sameAs"><i class="fa fa-instagram"></i></a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-lg-offset-2 text-center">
-                    <i class="fa fa-phone fa-3x wow bounceIn"></i>
-                    <p><abbr title="Phone">P:</abbr> <a href="tel:4158023508"><span itemprop="telephone">(415) 802-3508</span></a><br></p>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p><a href="mailto:zilvinas@vilutis.lt"><span itemprop="email">zilvinas@vilutis.lt</span></a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/jquery.fittext.js"></script>
-    <script src="js/wow.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/creative.min.js"></script>
-    
+    <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
-      "@context": "http://schema.org",
-      "@type": "WebSite",
+      "@context": "https://schema.org",
+      "@type": "Person",
       "name": "Zilvinas Vilutis",
-      "alternateName": "Software Architect for Enterprise Web Applications based in Bay Area.",
-      "url": "http://zilvinas.vilutis.lt",
-      "author": {
-        "@context": "http://schema.org",
-        "@type": "Person",
-        "name": "Zilvinas Vilutis",
-        "url": "http://zilvinas.vilutis.lt",
-        "sameAs": [
-          "http://blog.vilutis.lt",
-          "https://www.facebook.com/cikasfm",
-          "https://instagram.com/cikasfm",
-          "https://github.com/cikasfm",
-          "https://www.linkedin.com/in/zvilutis",
-          "https://plus.google.com/+ZilvinasVilutis",
-          "http://cikasfm.github.io"
-        ]
-      }
+      "url": "https://zilvinas.vilutis.lt",
+      "image": "https://www.gravatar.com/avatar/4dc36423f5990641c697ed0fa285530d?s=650",
+      "jobTitle": "Staff Software Engineer & Distributed Systems Architect",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Sony"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Vilnius Gediminas Technical University"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Diego",
+        "addressRegion": "CA",
+        "addressCountry": "USA"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/zvilutis",
+        "https://github.com/cikasfm",
+        "https://blog.vilutis.lt",
+        "https://twitter.com/cikasfm",
+        "https://instagram.com/cikasfm"
+      ],
+      "knowsAbout": [
+        "Distributed Systems Architecture",
+        "Microservices Replatforming",
+        "API Gateway Design",
+        "Fine-Grained Authorization (OpenFGA)",
+        "High-Throughput Eventing",
+        "Java & Spring Boot",
+        "Go (Golang)",
+        "AWS Cloud Architecture",
+        "Kubernetes & Docker",
+        "Kafka & Apache Pulsar"
+      ]
     }
     </script>
+</head>
 
+<body>
+
+    <!-- Sticky Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#hero" class="nav-brand">
+                <span class="brand-accent">&lt;ZV /&gt;</span> Zilvinas Vilutis
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#skills" class="nav-link">Architecture & Skills</a></li>
+                <li><a href="#beyond" class="nav-link">Beyond the Terminal</a></li>
+                <li><a href="#connect" class="nav-link">Connect</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="https://www.linkedin.com/in/zvilutis" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
+                <button type="button" class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark/light theme">
+                    <i class="fa-solid fa-sun" id="themeIcon"></i>
+                </button>
+                <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-nav-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#about" class="mobile-nav-link">About</a></li>
+            <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+            <li><a href="#skills" class="mobile-nav-link">Architecture & Skills</a></li>
+            <li><a href="#beyond" class="mobile-nav-link">Beyond the Terminal</a></li>
+            <li><a href="#connect" class="mobile-nav-link">Connect</a></li>
+            <li><a href="https://www.linkedin.com/in/zvilutis" target="_blank" rel="noopener noreferrer">LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="hero-glow"></div>
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <span class="badge-pill emerald">
+                            <i class="fa-solid fa-bolt"></i> Staff Software Engineer & Architect
+                        </span>
+                        <span class="badge-pill" style="text-transform: none;">
+                            🇱🇹 Vilnius Roots
+                        </span>
+                        <span class="badge-pill amber" style="text-transform: none;">
+                            👨‍👧‍👦 Father of 3
+                        </span>
+                        <span class="badge-pill rose" style="text-transform: none;">
+                            🏋️‍♂️ CrossFit Athlete
+                        </span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Architecting High-Throughput & <span class="brand-accent">Resilient Distributed Systems</span>
+                    </h1>
+
+                    <p class="hero-lead">
+                        Seasoned backend architect with <strong>20+ years</strong> of engineering leadership across <strong>Sony</strong>, <strong>Okta</strong>, <strong>Intuit</strong>, <strong>Grid Dynamics</strong>, and <strong>EIS Group</strong>. Grew up in Vilnius, Lithuania 🇱🇹 and now based in San Diego, CA. Specializing in monolith-to-microservices replatforming, zero-to-one token gateways, fine-grained authorization, and billion-scale event streaming.
+                    </p>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">20+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">1B+</span>
+                            <span class="stat-label">Daily Events Streamed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">40%</span>
+                            <span class="stat-label">Latency Reduction (FGA)</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">10x</span>
+                            <span class="stat-label">TPS Search Scaling</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="#experience" class="btn btn-primary">
+                            <i class="fa-solid fa-layer-group"></i> View Experience
+                        </a>
+                        <a href="https://www.linkedin.com/in/zvilutis" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                            <i class="fa-brands fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/cikasfm" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/zvilutis" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/cikasfm" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://blog.vilutis.lt" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Blog">
+                            <i class="fa-solid fa-rss"></i>
+                        </a>
+                        <a href="https://twitter.com/cikasfm" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Twitter">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Code Window Showcase -->
+                <div class="code-window">
+                    <div class="code-header">
+                        <div class="code-dots">
+                            <div class="dot red"></div>
+                            <div class="dot amber"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <span class="code-title">architect-profile.json</span>
+                        <span style="font-size: 0.75rem; color: var(--text-muted);"><i class="fa-solid fa-code-branch"></i> main</span>
+                    </div>
+                    <pre class="code-body"><code>{
+  <span class="token-key">"engineer"</span>: <span class="token-str">"Zilvinas Vilutis"</span>,
+  <span class="token-key">"role"</span>: <span class="token-str">"Staff Software Engineer"</span>,
+  <span class="token-key">"location"</span>: <span class="token-str">"San Diego, CA, USA"</span>,
+  <span class="token-key">"heritage"</span>: <span class="token-str">"Vilnius, Lithuania 🇱🇹"</span>,
+  <span class="token-key">"currentCompany"</span>: <span class="token-str">"Sony (SEPS Payments API)"</span>,
+  <span class="token-key">"family"</span>: <span class="token-str">"Proud Father of 3 + Family Dog 🐕"</span>,
+  <span class="token-key">"passions"</span>: [
+    <span class="token-arr">"Car Enthusiast & Porsche Wrenching 🏎️"</span>,
+    <span class="token-arr">"CrossFit Athlete & Physical Grit 🏋️‍♂️"</span>,
+    <span class="token-arr">"Pacific Waves Surfing 🏄‍♂️"</span>
+  ],
+  <span class="token-key">"primaryStack"</span>: [
+    <span class="token-arr">"Java / Spring Boot"</span>,
+    <span class="token-arr">"Go (Golang)"</span>,
+    <span class="token-arr">"AWS (EKS, Lambda, DynamoDB)"</span>,
+    <span class="token-arr">"Kafka / Pulsar"</span>,
+    <span class="token-arr">"Kong API Gateway"</span>
+  ],
+  <span class="token-key">"mindset"</span>: <span class="token-str">"First-principles systems & mechanical diagnostics"</span>
+}</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about" style="background: var(--bg-subtle);">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge-pill cyan">Engineering Philosophy</span>
+                <h2 class="section-title">Architecting with Impact & Velocity</h2>
+                <p class="section-subtitle">
+                    Delivering highly reliable, scalable, and decoupled backend systems that power mission-critical platforms and enterprise identities.
+                </p>
+            </div>
+
+            <div class="card-grid">
+                <div class="glass-card">
+                    <div class="lifestyle-icon-wrapper surf" style="margin-bottom: 1rem;">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Decoupled & Resilient Gateways</h3>
+                    <p>
+                        Architecting modern API gateways with JWT/OAuth2 and advanced cryptography to isolate security concerns, prevent integration churn, and guarantee low-latency transaction routing.
+                    </p>
+                </div>
+
+                <div class="glass-card">
+                    <div class="lifestyle-icon-wrapper" style="background: rgba(99, 102, 241, 0.12); color: var(--accent-primary); border: 1px solid rgba(99, 102, 241, 0.25); margin-bottom: 1rem;">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Data & Eventing at Scale</h3>
+                    <p>
+                        Designing high-throughput streaming systems and ETL pipelines (Kafka, Apache Pulsar, DynamoDB) handling billions of events daily with zero customer downtime.
+                    </p>
+                </div>
+
+                <div class="glass-card">
+                    <div class="lifestyle-icon-wrapper" style="background: rgba(16, 185, 129, 0.12); color: var(--accent-emerald); border: 1px solid rgba(16, 185, 129, 0.25); margin-bottom: 1rem;">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">AI-Accelerated SDLC</h3>
+                    <p>
+                        Pioneering the integration of modern AI developer workflows (Cursor, Windsurf, Generative AI agents) to rapidly build, test, prototype, and de-risk complex architectures.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section class="section" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge-pill emerald">Career Journey</span>
+                <h2 class="section-title">Staff-Level Engineering Impact</h2>
+                <p class="section-subtitle">
+                    Over 20 years of solving high-concurrency, resilience, and identity challenges across world-class organizations.
+                </p>
+            </div>
+
+            <div class="timeline">
+                
+                <!-- SONY -->
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <div class="exp-company-info">
+                            <div class="company-avatar" style="color: #38bdf8;">
+                                <i class="fa-solid fa-gamepad"></i>
+                            </div>
+                            <div class="exp-title-group">
+                                <h3>Staff Software Engineer</h3>
+                                <div class="exp-company-meta">
+                                    <span>SONY</span>
+                                    <span>•</span>
+                                    <span>Sony Engagement Platform Services (SEPS)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="exp-date-location">
+                            <span class="badge-pill emerald">Nov 2025 – Present</span>
+                            <span style="margin-top: 0.35rem;"><i class="fa-solid fa-location-dot"></i> San Diego, CA</span>
+                        </div>
+                    </div>
+                    <p class="exp-summary">
+                        Drive architectural strategy and implementation for mission-critical API infrastructure on the Sony Engagement Platform Services team, focusing on decoupled, highly resilient authentication gateways for high-volume Payments APIs.
+                    </p>
+                    <ul class="achievements-list">
+                        <li>
+                            <strong>Zero-to-One Token Exchange Platform:</strong> Architected and implemented a high-throughput, self-healing token exchange architecture from the ground up using Kong API Gateway and Java/Spring service with layered caching to minimize latency. Built automated CI/CD to AWS EKS with Grafana observability.
+                        </li>
+                        <li>
+                            <strong>Decoupled Authentication:</strong> Architected a secure API Gateway model using JWT and advanced cryptography. Consumer apps authenticate directly with the gateway, eliminating integration churn with upstream auth.
+                        </li>
+                        <li>
+                            <strong>Payment Flow Optimization & Resilience:</strong> Streamlined payment integrations by isolating security concerns for global transaction routing. Enforce Staff-level standards via distributed tracing, metrics, and self-healing EKS/Docker containers.
+                        </li>
+                        <li>
+                            <strong>AI Acceleration & Mentorship:</strong> Leveraged GenAI developer agents to accelerate coding and testing lifecycles while driving consensus on cloud-native API patterns.
+                        </li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Spring Boot</span>
+                        <span class="tech-tag">Kong API Gateway</span>
+                        <span class="tech-tag">JWT / OAuth2</span>
+                        <span class="tech-tag">AWS EKS</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Grafana</span>
+                        <span class="tech-tag">AI Developer Tools</span>
+                    </div>
+                </div>
+
+                <!-- OKTA -->
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <div class="exp-company-info">
+                            <div class="company-avatar" style="color: #6366f1;">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div class="exp-title-group">
+                                <h3>Staff Software Engineer</h3>
+                                <div class="exp-company-meta">
+                                    <span>OKTA</span>
+                                    <span>•</span>
+                                    <span>Fine-Grained Authorization (FGA)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="exp-date-location">
+                            <span class="badge-pill">Sep 2024 – Oct 2025</span>
+                            <span style="margin-top: 0.35rem;"><i class="fa-solid fa-location-dot"></i> San Diego, CA</span>
+                        </div>
+                    </div>
+                    <p class="exp-summary">
+                        Architected scalable, high-performance authorization systems using OpenFGA to secure enterprise identities at massive scale, powering billions of daily auth checks.
+                    </p>
+                    <ul class="achievements-list">
+                        <li>
+                            <strong>List Objects API Optimization:</strong> Overhauled OpenFGA data retrieval using DynamoDB precomputed caching and batch processing, slashing query latency by 40% and enabling large-scale query pagination.
+                        </li>
+                        <li>
+                            <strong>Zero-Downtime Migration (Streaming ETL):</strong> Designed and implemented a highly concurrent, streaming AWS DynamoDB migration tool to seamlessly transfer terabytes of data without customer impact.
+                        </li>
+                        <li>
+                            <strong>Strategic Prototyping & Cloud Architecture:</strong> Led end-to-end research and POC development to de-risk complex authorization models, optimizing relational and NoSQL queries on Kubernetes & Docker.
+                        </li>
+                        <li>
+                            <strong>AI-Accelerated Engineering:</strong> Integrated modern AI tools (Cursor, Windsurf) to streamline workflows while actively evaluating AI-driven policy optimization.
+                        </li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Go (Golang)</span>
+                        <span class="tech-tag">OpenFGA</span>
+                        <span class="tech-tag">AWS DynamoDB</span>
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">REST / GraphQL</span>
+                        <span class="tech-tag">Cursor / Windsurf</span>
+                    </div>
+                </div>
+
+                <!-- INTUIT -->
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <div class="exp-company-info">
+                            <div class="company-avatar" style="color: #10b981;">
+                                <i class="fa-solid fa-fingerprint"></i>
+                            </div>
+                            <div class="exp-title-group">
+                                <h3>Staff Software Engineer</h3>
+                                <div class="exp-company-meta">
+                                    <span>INTUIT</span>
+                                    <span>•</span>
+                                    <span>Identity & Authentication Platform</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="exp-date-location">
+                            <span class="badge-pill">Jul 2021 – Feb 2024</span>
+                            <span style="margin-top: 0.35rem;"><i class="fa-solid fa-location-dot"></i> San Diego, CA</span>
+                        </div>
+                    </div>
+                    <p class="exp-summary">
+                        Led architecture and delivery of highly scalable, secure identity services for flagship products (TurboTax, QuickBooks) serving hundreds of millions of users.
+                    </p>
+                    <ul class="achievements-list">
+                        <li>
+                            <strong>Billion-Scale Pub/Sub Eventing:</strong> Architected and oversaw end-to-end development of eventing services utilizing Apache Pulsar, Kafka, and AWS Lambda, successfully processing up to 1 billion events daily while optimizing cloud cost-efficiency.
+                        </li>
+                        <li>
+                            <strong>Device Management & ATO Prevention:</strong> Built a high-throughput Customer Device Management service with proactive notifications, empowering users to flag untrusted sessions and drastically reducing Account Takeovers (ATO).
+                        </li>
+                        <li>
+                            <strong>Microservices Replatforming:</strong> Drove the transformation of legacy monolithic systems into high-throughput microservices using Java, Kotlin, and GoLang, processing billions of daily transactions.
+                        </li>
+                        <li>
+                            <strong>Identity & Fraud Prevention:</strong> Championed cross-team integration of Government ID Verification providers with A/B testing frameworks to optimize provider selection and trust.
+                        </li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Kotlin</span>
+                        <span class="tech-tag">GoLang</span>
+                        <span class="tech-tag">Apache Pulsar</span>
+                        <span class="tech-tag">Kafka</span>
+                        <span class="tech-tag">AWS Lambda</span>
+                        <span class="tech-tag">AWS S3</span>
+                        <span class="tech-tag">Data Lakes</span>
+                    </div>
+                </div>
+
+                <!-- GRID DYNAMICS -->
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <div class="exp-company-info">
+                            <div class="company-avatar" style="color: #f59e0b;">
+                                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                            </div>
+                            <div class="exp-title-group">
+                                <h3>Senior Software Engineer / Tech Lead</h3>
+                                <div class="exp-company-meta">
+                                    <span>GRID DYNAMICS</span>
+                                    <span>•</span>
+                                    <span>Client Engagement: Macy's & Bloomingdale's</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="exp-date-location">
+                            <span class="badge-pill">Aug 2016 – Aug 2021</span>
+                            <span style="margin-top: 0.35rem;"><i class="fa-solid fa-location-dot"></i> SF Bay Area, CA</span>
+                        </div>
+                    </div>
+                    <p class="exp-summary">
+                        Provided technical leadership and consulting for tier-1 retail platforms (Macy's, Bloomingdale's, Home Depot), leading search engine optimization, Solr clustering, and distributed performance tuning.
+                    </p>
+                    <ul class="achievements-list">
+                        <li>
+                            <strong>10x TPS & 4x Catalog Expansion:</strong> Engineered infrastructure and search integration enhancements, expanding catalog size by 4x and achieving a 10x increase in Transactions Per Second through intelligent index replication across hundreds of nodes.
+                        </li>
+                        <li>
+                            <strong>Solr Cluster Management:</strong> Partnered with SRE teams to design and integrate cluster management and service discovery for Apache Solr, slashing production server health issues by 80%.
+                        </li>
+                        <li>
+                            <strong>Operations & Release Guidance:</strong> Guided offshore development teams in Release Management and Operations, aligning technical execution with enterprise business goals.
+                        </li>
+                    </ul>
+                    <div class="client-engagement-section">
+                        <div class="client-engagement-header">
+                            <i class="fa-solid fa-building-columns"></i> Enterprise Clients & Consultations
+                        </div>
+                        <div class="client-logos-row">
+                            <div class="client-logo-badge">
+                                <img src="img/logos/logo-macys.svg" alt="Macy's">
+                            </div>
+                            <div class="client-logo-badge">
+                                <img src="img/logos/logo-bloomingdales.svg" alt="Bloomingdale's">
+                            </div>
+                            <div class="client-logo-badge">
+                                <img src="img/logos/logo-americaneagle.svg" alt="American Eagle">
+                            </div>
+                            <div class="client-logo-badge">
+                                <img src="img/logos/logo-homedepot.svg" alt="The Home Depot">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Apache Solr</span>
+                        <span class="tech-tag">Search Indexing</span>
+                        <span class="tech-tag">Distributed Caching</span>
+                        <span class="tech-tag">Microservices</span>
+                        <span class="tech-tag">High-Throughput E-Commerce</span>
+                    </div>
+                </div>
+
+                <!-- EIS GROUP -->
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <div class="exp-company-info">
+                            <div class="company-avatar" style="color: #a855f7;">
+                                <i class="fa-solid fa-cubes"></i>
+                            </div>
+                            <div class="exp-title-group">
+                                <h3>Senior Solutions Architect & Lead Engineer</h3>
+                                <div class="exp-company-meta">
+                                    <span>EIS GROUP</span>
+                                    <span>•</span>
+                                    <span>Core Insurance & Policy Platforms</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="exp-date-location">
+                            <span class="badge-pill">Feb 2006 – Jul 2016 (10+ Years)</span>
+                            <span style="margin-top: 0.35rem;"><i class="fa-solid fa-location-dot"></i> San Francisco, CA & Vilnius</span>
+                        </div>
+                    </div>
+                    <p class="exp-summary">
+                        A decade-long foundational journey advancing from Test Automation Engineer to Senior Solutions Architect. Drove architectural design, complex domain modeling, multi-policy financial rating, and mission-critical enterprise integrations for tier-1 insurers including AAA, Hollard, AIG, and Liberty Mutual.
+                    </p>
+                    <ul class="achievements-list">
+                        <li>
+                            <strong>Group Benefits Core Domain & Rating Engine:</strong> Architected the core domain model for Group Benefits Policy Administration. Designed high-volume census file uploads, quote variation models, and dynamic multi-policy premium aggregation services supporting complex actuarial rules.
+                        </li>
+                        <li>
+                            <strong>Tier-1 Client Integrations (AAA & BoA NACHA):</strong> Led end-to-end integration architecture for major clients (AAA), constructing high-reliability batch and real-time integrations for MVR, CLUE, credit score reporting, address validation, and Bank of America NACHA automated payment reconciliation.
+                        </li>
+                        <li>
+                            <strong>Engineering Leadership & Defect Reduction:</strong> Mentored and guided 10+ engineers through structured code reviews and technical workshops, cutting integration defects by 30% and establishing company-wide framework usage guidelines.
+                        </li>
+                        <li>
+                            <strong>Performance Profiling & Bottleneck Resolution:</strong> Executed comprehensive front-end and back-end performance profiling, resolving critical customer support escalations with hands-on coding of complex distributed system components.
+                        </li>
+                        <li>
+                            <strong>10-Year Career Progression:</strong> Rose through consistent merit: Test Engineer (2006–2007) ➔ Java Developer (2007–2008) ➔ Senior Programmer (2009–2010) ➔ System Analyst (2010–2011) ➔ Solutions Architect (2011–2014) ➔ Senior Solutions Architect (2014–2016).
+                        </li>
+                    </ul>
+                    <div class="client-engagement-section">
+                        <div class="client-engagement-header">
+                            <i class="fa-solid fa-building-shield"></i> Insurance & Banking Clients
+                        </div>
+                        <div class="client-logos-row">
+                            <div class="client-logo-badge">
+                                <img src="img/logos/logo-aig.svg" alt="AIG">
+                            </div>
+                            <div class="client-logo-badge">
+                                <img src="img/logos/logo-aaa.svg" alt="AAA">
+                            </div>
+                            <div class="client-logo-badge">
+                                <img src="img/logos/logo-libertymutual.svg" alt="Liberty Mutual">
+                            </div>
+                            <div class="client-logo-badge">
+                                <img src="img/logos/logo-nationwide.svg" alt="Nationwide Insurance">
+                            </div>
+                            <div class="client-logo-badge">
+                                <span>Hollard Insurance</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Java Enterprise</span>
+                        <span class="tech-tag">Spring Web Flow</span>
+                        <span class="tech-tag">Hibernate</span>
+                        <span class="tech-tag">REST APIs</span>
+                        <span class="tech-tag">PostgreSQL / Oracle</span>
+                        <span class="tech-tag">NACHA Banking Integrations</span>
+                        <span class="tech-tag">Domain-Driven Design (DDD)</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Architecture Section -->
+    <section class="section" id="skills" style="background: var(--bg-subtle);">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge-pill cyan">Technical Arsenal</span>
+                <h2 class="section-title">Core Competencies & Stack</h2>
+                <p class="section-subtitle">
+                    Modern technologies, frameworks, and architectural principles mastered over 20+ years of shipping production systems.
+                </p>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Card 1 -->
+                <div class="skill-category-card">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h4>Languages & Backend</h4>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="skill-pill"><i class="fa-brands fa-java"></i> Java</span>
+                        <span class="skill-pill"><i class="fa-brands fa-golang"></i> Go (Golang)</span>
+                        <span class="skill-pill"><i class="fa-solid fa-terminal"></i> Kotlin</span>
+                        <span class="skill-pill"><i class="fa-solid fa-leaf"></i> Spring Boot</span>
+                        <span class="skill-pill"><i class="fa-solid fa-gears"></i> REST & GraphQL</span>
+                        <span class="skill-pill"><i class="fa-solid fa-code"></i> Node.js / TypeScript</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="skill-category-card">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon" style="color: var(--accent-cyan); background: rgba(6, 182, 212, 0.1);">
+                            <i class="fa-solid fa-diagram-project"></i>
+                        </div>
+                        <h4>Distributed & Eventing</h4>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="skill-pill"><i class="fa-solid fa-wave-square"></i> Apache Kafka</span>
+                        <span class="skill-pill"><i class="fa-solid fa-bolt"></i> Apache Pulsar</span>
+                        <span class="skill-pill"><i class="fa-solid fa-door-open"></i> Kong API Gateway</span>
+                        <span class="skill-pill"><i class="fa-solid fa-network-wired"></i> Decoupled Auth Gateways</span>
+                        <span class="skill-pill"><i class="fa-solid fa-arrows-split-up-and-left"></i> Monolith-to-Microservices</span>
+                        <span class="skill-pill"><i class="fa-solid fa-layer-group"></i> Layered Caching</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="skill-category-card">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon" style="color: var(--accent-amber); background: rgba(245, 158, 11, 0.1);">
+                            <i class="fa-solid fa-cloud"></i>
+                        </div>
+                        <h4>Cloud & Infrastructure</h4>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="skill-pill"><i class="fa-brands fa-aws"></i> AWS (EKS, Lambda, S3)</span>
+                        <span class="skill-pill"><i class="fa-solid fa-dharmachakra"></i> Kubernetes</span>
+                        <span class="skill-pill"><i class="fa-brands fa-docker"></i> Docker</span>
+                        <span class="skill-pill"><i class="fa-solid fa-helmet-safety"></i> Helm</span>
+                        <span class="skill-pill"><i class="fa-solid fa-chart-line"></i> Grafana & Tracing</span>
+                        <span class="skill-pill"><i class="fa-solid fa-server"></i> CI/CD Pipelines</span>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="skill-category-card">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon" style="color: var(--accent-rose); background: rgba(244, 63, 94, 0.1);">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <h4>Identity & Security</h4>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="skill-pill"><i class="fa-solid fa-user-shield"></i> OpenFGA (Fine-Grained Auth)</span>
+                        <span class="skill-pill"><i class="fa-solid fa-key"></i> JWT / OAuth2</span>
+                        <span class="skill-pill"><i class="fa-solid fa-shield-virus"></i> ATO & Fraud Prevention</span>
+                        <span class="skill-pill"><i class="fa-solid fa-id-card"></i> ID Verification (A/B Testing)</span>
+                        <span class="skill-pill"><i class="fa-solid fa-fingerprint"></i> Device Management</span>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="skill-category-card">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon" style="color: var(--accent-emerald); background: rgba(16, 185, 129, 0.1);">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <h4>Databases & Search</h4>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="skill-pill"><i class="fa-solid fa-database"></i> AWS DynamoDB</span>
+                        <span class="skill-pill"><i class="fa-solid fa-server"></i> PostgreSQL</span>
+                        <span class="skill-pill"><i class="fa-solid fa-magnifying-glass"></i> Apache Solr</span>
+                        <span class="skill-pill"><i class="fa-solid fa-cubes-stacked"></i> Elasticsearch</span>
+                        <span class="skill-pill"><i class="fa-solid fa-memory"></i> Redis Caching</span>
+                        <span class="skill-pill"><i class="fa-solid fa-database"></i> Oracle Database</span>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="skill-category-card">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon" style="color: #a855f7; background: rgba(168, 85, 247, 0.1);">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h4>AI Acceleration & Tooling</h4>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="skill-pill"><i class="fa-solid fa-robot"></i> Cursor AI</span>
+                        <span class="skill-pill"><i class="fa-solid fa-wind"></i> Windsurf</span>
+                        <span class="skill-pill"><i class="fa-solid fa-microchip"></i> GenAI Coding Agents</span>
+                        <span class="skill-pill"><i class="fa-solid fa-vial-circle-check"></i> AI-Driven Automated Testing</span>
+                        <span class="skill-pill"><i class="fa-solid fa-lightbulb"></i> Rapid POC & De-risking</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beyond The Terminal / Lifestyle Section -->
+    <section class="section" id="beyond">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge-pill amber">Life & Mindset</span>
+                <h2 class="section-title">Beyond the Terminal</h2>
+                <p class="section-subtitle">
+                    The engineering mindset doesn’t stop at code — from precision German automotive mechanics to catching Pacific swells.
+                </p>
+            </div>
+
+            <div class="lifestyle-grid">
+                <!-- Porsche & Tinkering Card -->
+                <div class="lifestyle-card">
+                    <div class="lifestyle-icon-wrapper porsche">
+                        <i class="fa-solid fa-car-side"></i>
+                    </div>
+                    <h3>Precision Engineering & Porsche Tinkering</h3>
+                    <p>
+                        I have a deep passion for understanding how intricate machines function from first principles. That fascination translates directly into wrenching on <strong>Porsches</strong> — having owned and maintained 3 Boxsters (986 S manual, 987 manual, 981 PDK), a 911 (997.2 manual), and 2 Macans.
+                    </p>
+                    <p>
+                        Whether performing preventative maintenance, diagnosing complex issues, or tearing down mechanical components, I love hands-on problem solving. The discipline of mechanical diagnostics — isolating root causes, respecting tolerances, and engineering reliability — mirrors the exact principles I apply to distributed software systems.
+                    </p>
+                    <div class="lifestyle-meta">
+                        <span class="skill-pill"><i class="fa-solid fa-wrench"></i> DIY Maintenance & Repairs</span>
+                        <span class="skill-pill"><i class="fa-solid fa-gauge-high"></i> Porsche Enthusiast</span>
+                        <span class="skill-pill"><i class="fa-solid fa-gears"></i> Root Cause Diagnostics</span>
+                    </div>
+                </div>
+
+                <!-- CrossFit Athlete Card -->
+                <div class="lifestyle-card">
+                    <div class="lifestyle-icon-wrapper" style="background: rgba(244, 63, 94, 0.12); color: var(--accent-rose); border: 1px solid rgba(244, 63, 94, 0.25);">
+                        <i class="fa-solid fa-dumbbell"></i>
+                    </div>
+                    <h3>CrossFit Athlete & Physical Grit</h3>
+                    <p>
+                        I am a dedicated <strong>CrossFit athlete</strong>, training consistently to build high-capacity physical endurance, explosive strength, and mental fortitude.
+                    </p>
+                    <p>
+                        Just like architecting zero-downtime distributed systems under extreme load, high-intensity functional training requires discipline, consistency, and the resilience to stay calm and execute under pressure.
+                    </p>
+                    <div class="lifestyle-meta">
+                        <span class="skill-pill"><i class="fa-solid fa-fire-flame-curved"></i> High-Intensity Training</span>
+                        <span class="skill-pill"><i class="fa-solid fa-medal"></i> Physical Discipline</span>
+                        <span class="skill-pill"><i class="fa-solid fa-heart-pulse"></i> Mental Resilience</span>
+                    </div>
+                </div>
+
+                <!-- Surfing & Family Card -->
+                <div class="lifestyle-card">
+                    <div class="lifestyle-icon-wrapper surf">
+                        <i class="fa-solid fa-water"></i>
+                    </div>
+                    <h3>Coastal Life, Surfing & Father of 3</h3>
+                    <p>
+                        I grew up in <strong>Vilnius, Lithuania 🇱🇹</strong> and have made sunny <strong>San Diego, California</strong> my home. As a proud <strong>father of 3</strong>, family is at the core of everything I do.
+                    </p>
+                    <p>
+                        When away from the keyboard, you'll find me out in the Pacific lineup catching waves, enjoying the outdoors with my 3 kids, or adventuring along the California coast with our family dog 🐕.
+                    </p>
+                    <div class="lifestyle-meta">
+                        <span class="skill-pill"><i class="fa-solid fa-water"></i> San Diego Surfing</span>
+                        <span class="skill-pill"><i class="fa-solid fa-children"></i> Father of 3</span>
+                        <span class="skill-pill"><i class="fa-solid fa-dog"></i> Family Dog Adventures</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Roots -->
+    <section class="section" style="background: var(--bg-subtle); padding: 4rem 0;">
+        <div class="container">
+            <div class="glass-card" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="company-avatar" style="color: var(--accent-primary);">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 1.2rem; margin-bottom: 0.25rem;">Vilnius Tech (Vilnius Gediminas Technical University)</h4>
+                        <p style="margin: 0; font-size: 0.95rem;">Bachelor of Science, Computer Science &nbsp;|&nbsp; <em>Vilnius, Lithuania</em></p>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <span class="badge-pill" style="text-transform: none; font-size: 0.85rem;"><i class="fa-solid fa-earth-americas"></i> English (Full Professional)</span>
+                    <span class="badge-pill" style="text-transform: none; font-size: 0.85rem;"><i class="fa-solid fa-language"></i> Lithuanian (Native)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect Section -->
+    <section class="section" id="connect">
+        <div class="container">
+            <div class="contact-card">
+                <div class="contact-avatar">
+                    <img src="https://www.gravatar.com/avatar/4dc36423f5990641c697ed0fa285530d?s=250" alt="Zilvinas Vilutis">
+                </div>
+                
+                <span class="badge-pill emerald">Social & Professional Hub</span>
+                <h2 class="section-title" style="margin-top: 0.75rem;">Let's Connect</h2>
+                <p style="max-width: 620px; margin: 0 auto; color: var(--text-secondary);">
+                    Connect with me directly on LinkedIn or explore my open-source projects and technical writing on GitHub and my blog.
+                </p>
+
+                <div class="contact-info-grid">
+                    <a href="https://www.linkedin.com/in/zvilutis" target="_blank" rel="noopener noreferrer" class="contact-info-item">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <span class="contact-info-label">Professional</span>
+                        <span class="contact-info-val">linkedin.com/in/zvilutis</span>
+                    </a>
+
+                    <a href="https://github.com/cikasfm" target="_blank" rel="noopener noreferrer" class="contact-info-item">
+                        <i class="fa-brands fa-github"></i>
+                        <span class="contact-info-label">Open Source</span>
+                        <span class="contact-info-val">github.com/cikasfm</span>
+                    </a>
+
+                    <a href="https://blog.vilutis.lt" target="_blank" rel="noopener noreferrer" class="contact-info-item">
+                        <i class="fa-solid fa-rss"></i>
+                        <span class="contact-info-label">Technical Blog</span>
+                        <span class="contact-info-val">blog.vilutis.lt</span>
+                    </a>
+
+                    <div class="contact-info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span class="contact-info-label">Location</span>
+                        <span class="contact-info-val">San Diego, CA</span>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://www.linkedin.com/in/zvilutis" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
+                    </a>
+                    <a href="https://github.com/cikasfm" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                        <i class="fa-brands fa-github"></i> GitHub Profile
+                    </a>
+                    <a href="https://blog.vilutis.lt" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                        <i class="fa-solid fa-rss"></i> Read Blog
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-copy">
+                &copy; <span id="currentYear"></span> Zilvinas Vilutis. All rights reserved. &bull; Crafted with precision in San Diego, CA.
+            </div>
+
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/zvilutis" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://blog.vilutis.lt" target="_blank" rel="noopener noreferrer">Blog</a>
+                <a href="https://github.com/cikasfm" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://twitter.com/cikasfm" target="_blank" rel="noopener noreferrer">Twitter</a>
+                <a href="https://instagram.com/cikasfm" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Vanilla Scripts -->
+    <script>
+        // Set dynamic copyright year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Theme Toggle Functionality
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const htmlElement = document.documentElement;
+
+        // Check local storage or prefers-color-scheme
+        const savedTheme = localStorage.getItem('site-theme') || 'dark';
+        applyTheme(savedTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme') || 'dark';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(newTheme);
+            localStorage.setItem('site-theme', newTheme);
+        });
+
+        function applyTheme(theme) {
+            htmlElement.setAttribute('data-theme', theme);
+            if (theme === 'light') {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            } else {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+        }
+
+        // Mobile Menu Drawer Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
+        });
+    </script>
 </body>
-
 </html>
