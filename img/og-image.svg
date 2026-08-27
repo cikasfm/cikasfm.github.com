@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030712"/>
+      <stop offset="50%" stop-color="#0b0f19"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+
+    <!-- Radial Ambient Glow -->
+    <radialGradient id="glowTop" cx="60%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.35"/>
+      <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#030712" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glowBottom" cx="20%" cy="80%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#030712" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Brand Accent Gradient -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="50%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#glowTop)"/>
+  <rect width="1200" height="630" fill="url(#glowBottom)"/>
+
+  <!-- Outer Border Frame -->
+  <rect x="24" y="24" width="1152" height="582" rx="20" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5"/>
+
+  <!-- Top Badge -->
+  <g transform="translate(80, 80)">
+    <rect x="0" y="0" width="460" height="38" rx="19" fill="rgba(99, 102, 241, 0.18)" stroke="rgba(99, 102, 241, 0.4)" stroke-width="1"/>
+    <circle cx="20" cy="19" r="6" fill="#10b981"/>
+    <text x="36" y="25" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#38bdf8" letter-spacing="1">STAFF SOFTWARE ENGINEER &amp; ARCHITECT</text>
+  </g>
+
+  <!-- Main Name Title -->
+  <text x="80" y="210" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="72" font-weight="800" fill="#f9fafb" letter-spacing="-1.5">
+    Zilvinas Vilutis
+  </text>
+
+  <!-- Headline -->
+  <text x="80" y="275" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="34" font-weight="700" fill="url(#textGrad)" letter-spacing="-0.5">
+    High-Throughput &amp; Resilient Distributed Systems
+  </text>
+
+  <!-- Experience Track -->
+  <text x="80" y="340" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="500" fill="#9ca3af">
+    20+ Years Engineering Leadership across <tspan fill="#f3f4f6" font-weight="700">Sony</tspan> • <tspan fill="#f3f4f6" font-weight="700">Okta</tspan> • <tspan fill="#f3f4f6" font-weight="700">Intuit</tspan> • <tspan fill="#f3f4f6" font-weight="700">Grid Dynamics</tspan> • <tspan fill="#f3f4f6" font-weight="700">EIS Group</tspan>
+  </text>
+
+  <!-- Technical Pillar Cards -->
+  <g transform="translate(80, 400)">
+    <!-- Pill 1 -->
+    <rect x="0" y="0" width="220" height="54" rx="12" fill="rgba(17, 24, 39, 0.7)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1"/>
+    <text x="20" y="33" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="600" fill="#f9fafb">Java / Spring Boot / Go</text>
+
+    <!-- Pill 2 -->
+    <rect x="236" y="0" width="240" height="54" rx="12" fill="rgba(17, 24, 39, 0.7)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1"/>
+    <text x="256" y="33" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="600" fill="#f9fafb">AWS (EKS, DynamoDB)</text>
+
+    <!-- Pill 3 -->
+    <rect x="492" y="0" width="230" height="54" rx="12" fill="rgba(17, 24, 39, 0.7)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1"/>
+    <text x="512" y="33" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="600" fill="#f9fafb">OpenFGA &amp; Auth Gateways</text>
+
+    <!-- Pill 4 -->
+    <rect x="738" y="0" width="230" height="54" rx="12" fill="rgba(17, 24, 39, 0.7)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1"/>
+    <text x="758" y="33" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="600" fill="#f9fafb">1B+ Event Streaming</text>
+  </g>
+
+  <!-- Bottom Footer Info -->
+  <g transform="translate(80, 530)">
+    <text x="0" y="16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="500" fill="#6b7280">
+      📍 San Diego, CA, USA &#160;|&#160; 🇱🇹 Vilnius Roots
+    </text>
+    <text x="960" y="16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700" fill="#38bdf8" text-anchor="end">
+      zilvinas.vilutis.lt
+    </text>
+  </g>
+</svg>
