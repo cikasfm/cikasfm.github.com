@@ -919,14 +919,14 @@ code, pre {
   color: var(--text-primary);
 }
 
-/* Beyond The Terminal / Lifestyle Section */
-.lifestyle-grid {
+/* Expanded Passions Story Grid */
+.passion-story-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 1.75rem;
 }
 
-.lifestyle-card {
+.passion-story-card {
   background: var(--bg-card);
   background-image: var(--gradient-card);
   border: 1px solid var(--border-color);
@@ -936,11 +936,57 @@ code, pre {
   position: relative;
   overflow: hidden;
   transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.lifestyle-card:hover {
+.passion-story-card:hover {
   border-color: var(--border-hover);
   transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.passion-story-card.featured {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 992px) {
+  .passion-story-card.span-2 {
+    grid-column: span 2;
+  }
+}
+
+.passion-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.gear-spec-box {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  margin: 1.25rem 0;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.gear-spec-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  line-height: 1.5;
+}
+
+.gear-spec-row i {
+  margin-top: 0.2rem;
+  color: var(--accent-primary);
+  flex-shrink: 0;
 }
 
 .lifestyle-icon-wrapper {
