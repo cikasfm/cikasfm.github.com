@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Zilvinas Vilutis | Staff Behavioral Interview Cheat Sheet</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../ico/favicon-32x32.png">
+    
+    <!-- Reveal.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/theme/black.min.css" id="theme">
+    
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom Presentation Theme Styles -->
+    <style>
+        :root {
+            --bg-main: #030712;
+            --card-bg: rgba(17, 24, 39, 0.9);
+            --card-border: rgba(255, 255, 255, 0.12);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent-emerald: #10b981;
+            --accent-cyan: #06b6d4;
+            --accent-amber: #f59e0b;
+            --accent-rose: #f43f5e;
+            --accent-purple: #a855f7;
+            --accent-indigo: #6366f1;
+        }
+
+        .reveal {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #030712;
+            color: var(--text-main);
+            font-size: 27px;
+        }
+
+        .reveal .slides {
+            text-align: left;
+        }
+
+        .slide-glow {
+            position: absolute;
+            top: -15%;
+            left: -10%;
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle at 75% 20%, rgba(99, 102, 241, 0.16), transparent 45%),
+                        radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.12), transparent 40%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+            font-weight: 700 !important;
+            text-transform: none !important;
+            letter-spacing: -0.02em !important;
+            color: #ffffff !important;
+        }
+
+        .slide-header {
+            margin-bottom: 0.65rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 0.35rem;
+        }
+
+        .slide-title-group h2 {
+            font-size: 1.8rem !important;
+            margin: 0 !important;
+            line-height: 1.2 !important;
+        }
+
+        .slide-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-top: 0.12rem;
+            font-weight: 400;
+        }
+
+        .competency-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.22rem 0.7rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            background: rgba(99, 102, 241, 0.18);
+            color: #818cf8;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.18rem 0.55rem;
+            border-radius: 9999px;
+            font-size: 0.74rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.08);
+            color: #e5e7eb;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .badge-pill.emerald { background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3); }
+        .badge-pill.amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border-color: rgba(245, 158, 11, 0.3); }
+        .badge-pill.cyan { background: rgba(6, 182, 212, 0.15); color: #38bdf8; border-color: rgba(6, 182, 212, 0.3); }
+        .badge-pill.rose { background: rgba(244, 63, 94, 0.15); color: #fb7185; border-color: rgba(244, 63, 94, 0.3); }
+        .badge-pill.purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; border-color: rgba(168, 85, 247, 0.3); }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .grid-1-2 {
+            display: grid;
+            grid-template-columns: 1.05fr 1.95fr;
+            gap: 0.85rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 0.8rem;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+            box-sizing: border-box;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .card-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            background: rgba(99, 102, 241, 0.2);
+            color: #818cf8;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            flex-shrink: 0;
+        }
+
+        .card-title {
+            font-size: 1.05rem !important;
+            font-weight: 700 !important;
+            margin: 0 !important;
+            color: #ffffff;
+        }
+
+        /* STAR section badges */
+        .star-badge {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.76rem;
+            font-weight: 800;
+            padding: 0.12rem 0.45rem;
+            border-radius: 4px;
+            margin-right: 0.4rem;
+            letter-spacing: 0.05em;
+        }
+        .star-s { background: rgba(59, 130, 246, 0.2); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.4); }
+        .star-t { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); }
+        .star-a { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+        .star-r { background: rgba(168, 85, 247, 0.2); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.4); }
+        .star-l { background: rgba(244, 63, 94, 0.2); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.4); }
+
+        ul.clean-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul.clean-list li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.45rem;
+            font-size: 0.88rem;
+            line-height: 1.38;
+            color: #d1d5db;
+        }
+
+        ul.clean-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent-emerald);
+            font-size: 1.0rem;
+            font-weight: 700;
+        }
+
+        ul.clean-list li strong {
+            color: #ffffff;
+        }
+
+        .code-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: #93c5fd;
+            background: rgba(59, 130, 246, 0.12);
+            padding: 0.1rem 0.35rem;
+            border-radius: 4px;
+            border: 1px solid rgba(59, 130, 246, 0.25);
+        }
+
+        .trigger-box {
+            background: rgba(30, 41, 59, 0.85);
+            border-left: 3px solid var(--accent-amber);
+            border-radius: 6px;
+            padding: 0.55rem 0.75rem;
+            margin-bottom: 0.55rem;
+            font-size: 0.88rem;
+            color: #e2e8f0;
+            line-height: 1.35;
+        }
+
+        .signal-box {
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 6px;
+            padding: 0.5rem 0.75rem;
+            font-size: 0.86rem;
+            color: #d1fae5;
+            margin-top: 0.5rem;
+        }
+            padding: 0.5rem 0.7rem;
+            font-size: 0.75rem;
+            color: #d1fae5;
+            margin-top: 0.55rem;
+        }
+
+        .nav-hint {
+            position: fixed;
+            bottom: 12px;
+            left: 20px;
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.4);
+            z-index: 100;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            pointer-events: none;
+        }
+        
+        .kbd {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            padding: 1px 5px;
+            font-family: 'JetBrains Mono', monospace;
+            color: #e5e7eb;
+        }
+
+        .notes-indicator {
+            position: fixed;
+            bottom: 12px;
+            right: 20px;
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.5);
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        .reveal .slide-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.76rem;
+            color: var(--accent-cyan);
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 4px;
+            padding: 2px 6px;
+            right: 20px;
+            bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- ========================================== -->
+            <!-- SLIDE 1: INDEX & BEHAVIORAL MATRIX         -->
+            <!-- ========================================== -->
+            <section data-background-color="#030712">
+                <div class="slide-glow"></div>
+                <div class="slide-content">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.65rem;">
+                        <span class="badge-pill purple"><i class="fa-solid fa-lock"></i> Private Prep Deck</span>
+                        <span class="badge-pill emerald"><i class="fa-solid fa-brain"></i> Staff/Principal Competencies</span>
+                        <span class="badge-pill cyan"><i class="fa-solid fa-bolt"></i> STAR-L Framework</span>
+                    </div>
+
+                    <h1 style="font-size: 2.35rem !important; line-height: 1.15; margin-bottom: 0.45rem;">
+                        Behavioral Interview Story Matrix: <br>
+                        <span style="background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Zilvinas Vilutis • Staff Leadership Stories</span>
+                    </h1>
+
+                    <p style="font-size: 0.95rem; color: #d1d5db; max-width: 950px; margin-bottom: 1.1rem; line-height: 1.4;">
+                        Pre-structured behavioral stories mapped to standard Staff/Principal engineering leadership competencies. Use arrow keys to review each story in full STAR-L format.
+                    </p>
+
+                    <!-- Competency Grid Index -->
+                    <div class="grid-3" style="font-size: 0.78rem;">
+                        <div class="card" style="border-left: 3px solid #38bdf8;">
+                            <strong style="color: #38bdf8;">1. Leading Without Authority</strong>
+                            <div style="color: #9ca3af; font-size: 0.72rem; margin-top: 0.2rem;">Sony Hosted Checkout • Cross-team RFC consensus (offshore vs client)</div>
+                        </div>
+                        <div class="card" style="border-left: 3px solid #34d399;">
+                            <strong style="color: #34d399;">2. High-Risk Technical Craft</strong>
+                            <div style="color: #9ca3af; font-size: 0.72rem; margin-top: 0.2rem;">Okta 2TB DynamoDB Migration • 1-thread/partition 5% WCU cap</div>
+                        </div>
+                        <div class="card" style="border-left: 3px solid #fbbf24;">
+                            <strong style="color: #fbbf24;">3. Team Leadership &amp; Scale</strong>
+                            <div style="color: #9ca3af; font-size: 0.72rem; margin-top: 0.2rem;">Intuit 40k TPS Stream • Led team of 3 for real-time ATO fraud locking</div>
+                        </div>
+                        <div class="card" style="border-left: 3px solid #f43f5e;">
+                            <strong style="color: #fb7185;">4. Pushing Back &amp; Boundaries</strong>
+                            <div style="color: #9ca3af; font-size: 0.72rem; margin-top: 0.2rem;">Sony Gateway Redis Trap • Established Shared Responsibility Model</div>
+                        </div>
+                        <div class="card" style="border-left: 3px solid #c084fc;">
+                            <strong style="color: #c084fc;">5. Customer Obsession &amp; Zero-to-One</strong>
+                            <div style="color: #9ca3af; font-size: 0.72rem; margin-top: 0.2rem;">Home Depot Text2Confirm • Led 6 engineers for SMS contractor checkout</div>
+                        </div>
+                        <div class="card" style="border-left: 3px solid #818cf8;">
+                            <strong style="color: #818cf8;">6. Architectural Trade-offs &amp; Hindsight</strong>
+                            <div style="color: #9ca3af; font-size: 0.72rem; margin-top: 0.2rem;">Okta Idempotent Writes &amp; In-Memory Dual-Write Pre-filtering</div>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <strong>Navigation Tip:</strong>
+                    Use Left/Right arrow keys to jump through each detailed behavioral story. Each slide gives you the Question Triggers, STAR-L breakdown, Staff Signal, and 60-second verbal script.
+                </aside>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- SLIDE 2: STORY 1 - LEADING WITHOUT AUTHORITY-->
+            <!-- ========================================== -->
+            <section data-background-color="#030712">
+                <div class="slide-glow"></div>
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <h2>Story 1: Leading Without Authority &amp; Alignment</h2>
+                            <div class="slide-subtitle">Sony: Unblocking Hosted Checkout across offshore backend &amp; client teams</div>
+                        </div>
+                        <span class="competency-badge" style="background: rgba(6, 182, 212, 0.15); color: #38bdf8; border-color: rgba(6, 182, 212, 0.3);">Influence Without Authority</span>
+                    </div>
+
+                    <div class="trigger-box">
+                        <strong style="color: #fbbf24;"><i class="fa-solid fa-bullhorn"></i> Question Triggers:</strong>
+                        "Tell me about a time you had to align multiple teams with conflicting priorities" • "Tell me about leading a project when nobody reported to you" • "How do you handle cross-timezone interface friction?"
+                    </div>
+
+                    <div class="grid-2">
+                        <!-- Left Column: Situation & Task -->
+                        <div class="card">
+                            <div style="margin-bottom: 0.45rem;">
+                                <span class="star-badge star-s">SITUATION</span>
+                                <span style="font-size: 0.79rem; color: #d1d5db;">
+                                    Sony needed to launch next-gen Hosted Checkout (CCoE / 360VME) using secure browser session cookies instead of legacy S2S API keys. Interface contracts between our offshore Session Service team and client UI integration team were drifting, causing integration blocks and finger-pointing.
+                                </span>
+                            </div>
+                            <div>
+                                <span class="star-badge star-t">TASK</span>
+                                <span style="font-size: 0.79rem; color: #d1d5db;">
+                                    As Staff Engineer on Gateway/PaaS, neither team reported to me. I had to step into the gap as the architectural "integration glue", freeze API contracts, and unblock the end-to-end checkout pipeline.
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Action & Result -->
+                        <div class="card">
+                            <div style="margin-bottom: 0.45rem;">
+                                <span class="star-badge star-a">ACTION</span>
+                                <ul class="clean-list" style="margin-top: 0.25rem;">
+                                    <li><strong>Authored Architecture Design Documents (ADDs):</strong> Formalized the multi-auth contract (<span class="code-tag">auth:*</span> session headers, CORS, cookie translation).</li>
+                                    <li><strong>Built Working Postman/Newman Mocks:</strong> Created local e2e integration repos so both teams could validate requests independently before staging.</li>
+                                    <li><strong>Engineered Custom Lua/Go Datakit:</strong> Intercepted and preserved credentials across Kong plugin boundaries to fix context dropping.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="star-badge star-r">RESULT</span>
+                                <span style="font-size: 0.79rem; color: #34d399; font-weight: 600;">
+                                    Successfully unblocked Hosted Checkout launch on schedule; eliminated cross-team drift and validated edge flow at 400 TPS with zero auth failures.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="signal-box">
+                        <strong>🎯 Staff+ Signal to Deliver:</strong> <em>"I didn't wait for management to assign ownership. I wrote the technical RFCs, created working test mocks to prove compatibility, and created empathy between timezone-separated teams."</em>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <strong>60-Second Verbal Script:</strong>
+                    "At Sony, we were unblocking our new Hosted Checkout platform, transitioning from legacy API keys to browser cookies. The offshore backend team and client UI teams were drifting on session contracts, creating integration delays. 
+                    Although neither team reported to me, I stepped in as the architectural glue. I authored an Architecture Design Document freezing the session contract, built working Newman e2e test mocks so both sides could test against a mock gateway, and built a custom Lua/Go plugin to prevent Kong from dropping context.
+                    We unblocked the launch on schedule and validated the pipeline at 400 TPS with zero customer downtime."
+                </aside>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- SLIDE 3: STORY 2 - HIGH-RISK DATA CRAFT    -->
+            <!-- ========================================== -->
+            <section data-background-color="#030712">
+                <div class="slide-glow"></div>
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <h2>Story 2: High-Risk Technical Execution &amp; Scale</h2>
+                            <div class="slide-subtitle">Okta: Zero-downtime 2TB DynamoDB live schema migration in GoLang</div>
+                        </div>
+                        <span class="competency-badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">Technical Craft &amp; Risk Mitigation</span>
+                    </div>
+
+                    <div class="trigger-box">
+                        <strong style="color: #fbbf24;"><i class="fa-solid fa-bullhorn"></i> Question Triggers:</strong>
+                        "Tell me about your most complex technical project" • "Tell me about a time you handled extreme operational risk" • "How do you ensure zero downtime during large database migrations?"
+                    </div>
+
+                    <div class="grid-2">
+                        <!-- Left Column: Situation & Task -->
+                        <div class="card">
+                            <div style="margin-bottom: 0.45rem;">
+                                <span class="star-badge star-s">SITUATION</span>
+                                <span style="font-size: 0.79rem; color: #d1d5db;">
+                                    Okta’s Fine-Grained Authorization service required a schema evolution and column rename across ~2 TB of active production DynamoDB records. In NoSQL there is no <span class="code-tag">ALTER TABLE RENAME</span>. If we scanned directly, we'd starve per-partition RCUs/WCUs and break enterprise authentication for Fortune 500 tenants.
+                                </span>
+                            </div>
+                            <div>
+                                <span class="star-badge star-t">TASK</span>
+                                <span style="font-size: 0.79rem; color: #d1d5db;">
+                                    Architect a background backfill migration service that could migrate 2TB of data over several weeks with 100% data integrity, zero latency impact, and resilient recovery from K8s pod restarts.
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Action & Result -->
+                        <div class="card">
+                            <div style="margin-bottom: 0.45rem;">
+                                <span class="star-badge star-a">ACTION</span>
+                                <ul class="clean-list" style="margin-top: 0.25rem;">
+                                    <li><strong>Exported Snapshot to S3 (0 RCU):</strong> Used native DynamoDB export to S3, eliminating 100% of read load on the live table at negligible cost.</li>
+                                    <li><strong>1-Thread-Per-Partition &amp; 5% WCU Cap:</strong> Mapped 1 Go worker per partition file, capping each thread to max 5% WCU, mathematically guaranteeing no partition throttling across 50 threads.</li>
+                                    <li><strong>Persisted Checkpoints in S3:</strong> Kept state in S3 metadata (no DB pollution), enabling instant resume upon spot node recycles.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="star-badge star-r">RESULT</span>
+                                <span style="font-size: 0.79rem; color: #34d399; font-weight: 600;">
+                                    Migrated ~2 TB of live data in a couple of weeks with 0 customer impact, 0 outages, 100% data integrity, and scaled service to zero upon completion.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="signal-box">
+                        <strong>🎯 Staff+ Signal to Deliver:</strong> <em>"I didn't guess with CloudWatch table-level metrics. I solved partition safety through mathematical design: 1 thread per partition file capped at 5% capacity, leaving 95% headroom for customer writes."</em>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <strong>60-Second Verbal Script:</strong>
+                    "At Okta, we needed to rename columns across 2TB of live production DynamoDB records backing our Fine-Grained Authorization platform. In NoSQL, you don't have DDL renames, and direct table scanning would have exhausted partition RCUs and caused auth outages.
+                    I architected a Go streaming service that consumed point-in-time DynamoDB S3 exports (costing 0 live RCUs). Knowing each S3 file maps to a partition, I assigned 1 worker thread per partition and capped writes to 5% of partition capacity. Even with 50 threads, we mathematically guaranteed zero partition throttling.
+                    We migrated 2TB over several weeks with zero customer impact and 100% data integrity."
+                </aside>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- SLIDE 4: STORY 3 - TEAM LEADERSHIP & STREAMING-->
+            <!-- ========================================== -->
+            <section data-background-color="#030712">
+                <div class="slide-glow"></div>
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <h2>Story 3: Team Leadership &amp; Real-Time Security Scale</h2>
+                            <div class="slide-subtitle">Intuit: Led team of 3 building 40k TPS session streaming for ATO fraud termination</div>
+                        </div>
+                        <span class="competency-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border-color: rgba(245, 158, 11, 0.3);">Team Leadership &amp; Mentorship</span>
+                    </div>
+
+                    <div class="trigger-box">
+                        <strong style="color: #fbbf24;"><i class="fa-solid fa-bullhorn"></i> Question Triggers:</strong>
+                        "Tell me about a time you led a team of engineers" • "How do you handle mentoring and sprint delivery?" • "Tell me about building real-time event streaming architectures."
+                    </div>
+
+                    <div class="grid-2">
+                        <!-- Left Column: Situation & Task -->
+                        <div class="card">
+                            <div style="margin-bottom: 0.45rem;">
+                                <span class="star-badge star-s">SITUATION</span>
+                                <span style="font-size: 0.79rem; color: #d1d5db;">
+                                    Intuit relied on legacy batch ClickStream pipelines to detect account takeovers (ATO) across 100M+ TurboTax and QuickBooks users. The batch delay meant compromised accounts were locked hours too late, risking tax refund theft and unauthorized banking transfers.
+                                </span>
+                            </div>
+                            <div>
+                                <span class="star-badge star-t">TASK</span>
+                                <span style="font-size: 0.79rem; color: #d1d5db;">
+                                    Lead a team of 3 engineers to architect and deliver a sub-second, real-time session event streaming pipeline capable of handling 40,000 TPS / 1 Billion events/day to trigger instant fraudulent session termination.
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Action & Result -->
+                        <div class="card">
+                            <div style="margin-bottom: 0.45rem;">
+                                <span class="star-badge star-a">ACTION</span>
+                                <ul class="clean-list" style="margin-top: 0.25rem;">
+                                    <li><strong>Architectural Decomposition:</strong> Built high-concurrency <span class="code-tag">session-service</span> in Go, streaming DynamoDB Streams via Lambda into a Kotlin processing service.</li>
+                                    <li><strong>Decoupled Heavy Encryption:</strong> Offloaded CPU-heavy crypto workloads to a dedicated Java sidecar over high-speed gRPC, keeping main session threads responsive.</li>
+                                    <li><strong>Team Mentorship:</strong> Ran daily pairing sessions, established automated contract testing in CI/CD, and broke down epic tasks into clear sprint deliverables.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="star-badge star-r">RESULT</span>
+                                <span style="font-size: 0.79rem; color: #34d399; font-weight: 600;">
+                                    Successfully scaled pipeline to 40k TPS (1B+ events/day) with 99.99% SLA; reduced fraud response time from hours to sub-second real-time session termination.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="signal-box">
+                        <strong>🎯 Staff+ Signal to Deliver:</strong> <em>"I led by breaking complex distributed streaming into manageable modules, mentoring junior engineers on gRPC/streaming mechanics, and keeping our focus locked on customer fraud protection."</em>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <strong>60-Second Verbal Script:</strong>
+                    "At Intuit, detecting Account Takeover (ATO) fraud across TurboTax and QuickBooks relied on legacy batch pipelines, which took hours to flag compromised accounts.
+                    I led a team of 3 engineers to build a real-time event streaming pipeline processing up to 40k TPS and 1B events/day. We ingested DynamoDB Streams via AWS Lambda into a Kotlin processor forwarding to Apache Pulsar and Kafka. To prevent latency bottlenecks, I decoupled heavy crypto into a dedicated Java sidecar over gRPC.
+                    We achieved 99.99% SLA and reduced fraudulent session termination from hours to sub-second, directly protecting millions in user funds."
+                </aside>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- SLIDE 5: STORY 4 - PUSHING BACK & BOUNDARIES-->
+            <!-- ========================================== -->
+            <section data-background-color="#030712">
+                <div class="slide-glow"></div>
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <h2>Story 4: Pushing Back &amp; Operational Boundaries</h2>
+                            <div class="slide-subtitle">Sony: The "You Touch It, You Own It" DevOps trap &amp; Shared Responsibility Model</div>
+                        </div>
+                        <span class="competency-badge" style="background: rgba(244, 63, 94, 0.15); color: #fb7185; border-color: rgba(244, 63, 94, 0.3);">Pushing Back &amp; Boundary Setting</span>
+                    </div>
+
+                    <div class="trigger-box">
+                        <strong style="color: #fbbf24;"><i class="fa-solid fa-bullhorn"></i> Question Triggers:</strong>
+                        "Tell me about a time you had to say NO or push back against management" • "How do you handle unclear team boundaries or scope creep?" • "Tell me about a disagreement over operational ownership."
+                    </div>
+
+                    <div class="grid-2">
+                        <!-- Left Column: Situation & Task -->
+                        <div class="card">
+                            <div style="margin-bottom: 0.45rem;">
+                                <span class="star-badge star-s">SITUATION</span>
+                                <span style="font-size: 0.79rem; color: #d1d5db;">
+                                    During performance testing on the API Gateway, we hit Redis socket contention under high-throughput rate-limiting tests. To unblock testing, I diagnosed the issue and upgraded an open-source rate-limiting plugin (CE to EE). Management and DevOps immediately assumed that because I fixed it, my team should own all gateway rate-limiting policies and base infrastructure.
+                                </span>
+                            </div>
+                            <div>
+                                <span class="star-badge star-t">TASK</span>
+                                <span style="font-size: 0.79rem; color: #d1d5db;">
+                                    Avoid becoming an operational bottleneck for the entire organization without stalling platform delivery or damaging relationships with DevOps and service teams.
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Action & Result -->
+                        <div class="card">
+                            <div style="margin-bottom: 0.45rem;">
+                                <span class="star-badge star-a">ACTION</span>
+                                <ul class="clean-list" style="margin-top: 0.25rem;">
+                                    <li><strong>Pushed Back with a Clear Framework:</strong> Wrote a proposal defining a clear 3-tier <em>Shared Responsibility Model</em> rather than simply refusing ownership.</li>
+                                    <li><strong>Defined Operational Tiers:</strong> DevOps owns KGO/Infra sync loops; Service Teams own their individual route rate-limits; my team strictly owns Auth/Token capabilities.</li>
+                                    <li><strong>Enabled Self-Service:</strong> Integrated Kong Konnect with our Dev Portal so downstream teams could self-configure API keys and route limits.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="star-badge star-r">RESULT</span>
+                                <span style="font-size: 0.79rem; color: #34d399; font-weight: 600;">
+                                    Leadership adopted the Shared Responsibility Model; prevented my team from becoming a ticket-taking support bottleneck while empowering service teams to self-manage limits.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="signal-box">
+                        <strong>🎯 Staff+ Signal to Deliver:</strong> <em>"A Senior engineer fixes the bug; a Staff engineer recognizes when fixing a bug threatens operational boundaries and establishes self-service architecture to scale the organization."</em>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <strong>60-Second Verbal Script:</strong>
+                    "At Sony, while testing our API Gateway, I diagnosed Redis socket contention and upgraded our rate-limiting plugin. Because I touched it, management and DevOps wanted my team to become the permanent owner of all gateway rate limits across the company.
+                    I knew this would turn us into an operational ticket-taking bottleneck. Instead of just saying no, I authored a Shared Responsibility Model: DevOps owns infra sync loops, individual service teams own their route rate limits, and my team owns auth/token exchange.
+                    We integrated self-service into our Dev Portal so teams configured their own limits. Leadership approved it, keeping our team focused on high-leverage platform work."
+                </aside>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- SLIDE 6: STORY 5 - CUSTOMER OBSESSION      -->
+            <!-- ========================================== -->
+            <section data-background-color="#030712">
+                <div class="slide-glow"></div>
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <h2>Story 5: Customer Obsession &amp; Zero-to-One Delivery</h2>
+                            <div class="slide-subtitle">Home Depot (Grid Dynamics): Leading team of 6 building "Text2Confirm" remote checkout</div>
+                        </div>
+                        <span class="competency-badge" style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border-color: rgba(168, 85, 247, 0.3);">Customer Obsession &amp; Innovation</span>
+                    </div>
+
+                    <div class="trigger-box">
+                        <strong style="color: #fbbf24;"><i class="fa-solid fa-bullhorn"></i> Question Triggers:</strong>
+                        "Tell me about a time you innovated on behalf of the customer" • "Tell me about leading a cross-functional feature end-to-end" • "How do you prioritize user experience against technical constraints?"
+                    </div>
+
+                    <div class="grid-2">
+                        <!-- Left Column: Situation & Task -->
+                        <div class="card">
+                            <div style="margin-bottom: 0.45rem;">
+                                <span class="star-badge star-s">SITUATION</span>
+                                <span style="font-size: 0.79rem; color: #d1d5db;">
+                                    Home Depot pro contractors frequently faced massive checkout friction: when buying materials at physical store registers, contractors had to call the project owner for corporate credit cards, causing long register lines, abandoned carts, and fraud security risks.
+                                </span>
+                            </div>
+                            <div>
+                                <span class="star-badge star-t">TASK</span>
+                                <span style="font-size: 0.79rem; color: #d1d5db;">
+                                    Lead a cross-functional team of 6 (2 UI, 3 backend, 1 QA) to architect and deliver "Text2Confirm", enabling contractors to checkout in-store while the project owner securely approves payment remotely via SMS / Web UI.
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Action & Result -->
+                        <div class="card">
+                            <div style="margin-bottom: 0.45rem;">
+                                <span class="star-badge star-a">ACTION</span>
+                                <ul class="clean-list" style="margin-top: 0.25rem;">
+                                    <li><strong>Cross-Functional Tech Leadership:</strong> Coordinated UI, backend, and POS integration streams; defined asynchronous webhook event flows between registers and SMS gateways.</li>
+                                    <li><strong>Security &amp; Expiry Guardrails:</strong> Built short-lived, encrypted payment authorization tokens with auto-expiry and replay protection.</li>
+                                    <li><strong>Rapid Iterative Prototyping:</strong> Ran pilot tests in select stores, iterating quickly on SMS latency to ensure register wait times stayed under 10 seconds.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="star-badge star-r">RESULT</span>
+                                <span style="font-size: 0.79rem; color: #34d399; font-weight: 600;">
+                                    Rolled out nationally across Home Depot stores; slashed pro register checkout times by over 60% and significantly reduced corporate card phone fraud.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="signal-box">
+                        <strong>🎯 Staff+ Signal to Deliver:</strong> <em>"Customer obsession means solving the real physical friction at the cash register. I led a 6-person team to bridge hardware POS, mobile web, and SMS into a seamless 10-second interaction."</em>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <strong>60-Second Verbal Script:</strong>
+                    "At Home Depot, contractors at the register faced huge delays calling project owners to read credit card numbers over the phone, causing register backups and fraud risks.
+                    I led a cross-functional team of 6 engineers to build 'Text2Confirm'. When a contractor scanned items, the system sent a real-time SMS link to the homeowner to approve the charge on their mobile web UI. I designed the async token exchange with short-lived replay protection to guarantee sub-10-second register response.
+                    We launched nationwide, cutting pro checkout times by 60% and eliminating phone card fraud."
+                </aside>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- SLIDE 7: STORY 6 - TRADE-OFFS & HINDSIGHT  -->
+            <!-- ========================================== -->
+            <section data-background-color="#030712">
+                <div class="slide-glow"></div>
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <h2>Story 6: Architectural Trade-offs &amp; Failures</h2>
+                            <div class="slide-subtitle">Okta &amp; Sony: Handling edge cases, cache consistency &amp; idempotent writes</div>
+                        </div>
+                        <span class="competency-badge" style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border-color: rgba(168, 85, 247, 0.3);">Trade-offs &amp; Continuous Learning</span>
+                    </div>
+
+                    <div class="trigger-box">
+                        <strong style="color: #fbbf24;"><i class="fa-solid fa-bullhorn"></i> Question Triggers:</strong>
+                        "Tell me about a time an architectural choice had unexpected consequences" • "What's a technical decision you would make differently today?" • "How do you design for idempotency under distributed retries?"
+                    </div>
+
+                    <div class="grid-2">
+                        <!-- Left Column: Situation & Task -->
+                        <div class="card">
+                            <div style="margin-bottom: 0.45rem;">
+                                <span class="star-badge star-s">SITUATION (OKTA)</span>
+                                <span style="font-size: 0.79rem; color: #d1d5db;">
+                                    In Okta’s Fine-Grained Authorization service (OpenFGA), customers sent bulk relationship tuple writes. When network retries occurred, duplicate tuples in batch requests triggered batch-level 500 errors, causing upstream customer jobs to fail and flood support queues.
+                                </span>
+                            </div>
+                            <div>
+                                <span class="star-badge star-t">TASK</span>
+                                <span style="font-size: 0.79rem; color: #d1d5db;">
+                                    Redesign batch relationship writes to be completely idempotent without adding database latency overhead.
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Action & Result -->
+                        <div class="card">
+                            <div style="margin-bottom: 0.45rem;">
+                                <span class="star-badge star-a">ACTION &amp; TRADE-OFF</span>
+                                <ul class="clean-list" style="margin-top: 0.25rem;">
+                                    <li><strong>In-Memory Deduplication:</strong> Implemented request-level singleflight deduplication before hitting the storage engine.</li>
+                                    <li><strong>Conditional Write Idempotency:</strong> Re-engineered DynamoDB writes to treat existing relationship tuples as a no-op success rather than a failure.</li>
+                                    <li><strong>Hindsight Reflection:</strong> In earlier designs, we relied on client-side retry discipline; the learning was to always enforce server-side idempotency in high-scale distributed auth APIs.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="star-badge star-r">RESULT</span>
+                                <span style="font-size: 0.79rem; color: #34d399; font-weight: 600;">
+                                    100% eliminated duplicate tuple batch write errors; significantly improved customer onboarding reliability and reduced support escalations to 0.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="signal-box">
+                        <strong>🎯 Staff+ Signal to Deliver:</strong> <em>"Distributed systems will retry. Designing APIs that fail on duplicate writes is an anti-pattern. I built server-side idempotency into the core write pipeline so retries are always safe."</em>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <strong>60-Second Verbal Script:</strong>
+                    "At Okta, when enterprise customers sent batch relationship writes to our Fine-Grained Authorization platform, network retries often sent duplicate tuples, which caused the entire batch to fail with an error.
+                    I re-engineered the write pipeline to make batch writes strictly idempotent: adding in-memory request deduplication and conditional write semantics so duplicate tuples returned a clean 200 no-op success.
+                    This eliminated duplicate-write support tickets to zero. My learning from this was that you can never expect client applications to manage retry hygiene: server-side idempotency must be built into distributed storage APIs from day one."
+                </aside>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- SLIDE 8: THE STAFF INTERVIEW CHEAT SHEET   -->
+            <!-- ========================================== -->
+            <section data-background-color="#030712">
+                <div class="slide-glow"></div>
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <h2>Staff Engineer Behavioral Cheat Sheet: Quick Anchors</h2>
+                            <div class="slide-subtitle">How to structure every behavioral answer under 90 seconds</div>
+                        </div>
+                        <span class="competency-badge" style="background: rgba(99, 102, 241, 0.15); color: #818cf8; border-color: rgba(99, 102, 241, 0.4);">Interview Playbook</span>
+                    </div>
+
+                    <div class="grid-2">
+                        <!-- Rule 1: The 90-Second STAR Formula -->
+                        <div class="card" style="border-top: 3px solid var(--accent-cyan);">
+                            <div class="card-title" style="margin-bottom: 0.4rem; color: #38bdf8;">
+                                <i class="fa-solid fa-clock"></i> The 90-Second Answer Cadence
+                            </div>
+                            <ul class="clean-list">
+                                <li><strong>15s (Context &amp; Scale):</strong> State the company, the problem, and why it was high-stakes (e.g., <em>"At Okta, migrating 2TB of live auth records..."</em>).</li>
+                                <li><strong>15s (Your Direct Role):</strong> State what you personally owned (e.g., <em>"I led the architecture and coordinated with 3 product teams..."</em>).</li>
+                                <li><strong>40s (Technical &amp; Leadership Action):</strong> 2-3 specific architectural choices (e.g., <em>"1-thread-per-partition 5% WCU cap, S3 checkpointing..."</em>).</li>
+                                <li><strong>20s (Metrics &amp; Learning):</strong> Quantifiable impact + hindsight reflection (e.g., <em>"0 downtime, and what I learned in hindsight was..."</em>).</li>
+                            </ul>
+                        </div>
+
+                        <!-- Rule 2: Staff vs Senior Differentiation -->
+                        <div class="card" style="border-top: 3px solid var(--accent-emerald);">
+                            <div class="card-title" style="margin-bottom: 0.4rem; color: #34d399;">
+                                <i class="fa-solid fa-trophy"></i> What Staff Interviewers Look For
+                            </div>
+                            <ul class="clean-list">
+                                <li><strong>Boundary Spanning:</strong> You don't just write code in a silo; you align teams, write design docs (ADDs/RFCs), and create consensus.</li>
+                                <li><strong>Operational Hygiene:</strong> You care about K8s pod crash recovery, zero data pollution, and clean scale-to-zero shutdowns.</li>
+                                <li><strong>Empowering Others (Self-Service):</strong> You build Dev Portals, test mocks, and reusable engines so other engineers move faster without you as a bottleneck.</li>
+                                <li><strong>Intellectual Honesty:</strong> You speak comfortably about trade-offs, real constraints, and what you'd do differently in hindsight.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card" style="margin-top: 0.65rem; padding: 0.55rem 0.85rem; background: rgba(99, 102, 241, 0.1); border-color: rgba(99, 102, 241, 0.3); text-align: center;">
+                        <div style="font-size: 0.82rem; font-weight: 700; color: #ffffff;">
+                            <i class="fa-solid fa-sparkles" style="color: #38bdf8;"></i> You have 20 years of genuine craft, real scale, and deep architecture. Be confident, concise, and authentic!
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <strong>Final Reminder:</strong>
+                    Keep your answers structured, concise (under 90 seconds), and always connect technical choices to business and customer outcomes. You've got this!
+                </aside>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Navigation & Presenter Hints -->
+    <div class="nav-hint">
+        <span>Navigate: <span class="kbd">Space</span> / <span class="kbd">←</span> <span class="kbd">→</span></span>
+        <span>Zoom In/Out: <span class="kbd">+</span> / <span class="kbd">-</span> (or <span class="kbd">Alt+Click</span>)</span>
+        <span>Overview: <span class="kbd">Esc</span> / <span class="kbd">O</span></span>
+        <span>Fullscreen: <span class="kbd">F</span></span>
+    </div>
+
+    <div class="notes-indicator">
+        <span>Speaker Notes: <span class="kbd">S</span></span>
+    </div>
+
+    <!-- Reveal.js Scripts & Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/notes/notes.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/highlight/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/zoom/zoom.min.js"></script>
+
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: 'c/t',
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            controls: true,
+            controlsTutorial: false,
+            progress: true,
+            center: true,
+            touch: true,
+            loop: false,
+            keyboard: true,
+            overview: true,
+            pdfSeparateFragments: false,
+            width: 1240,
+            height: 720,
+            margin: 0.03,
+            minScale: 0.5,
+            maxScale: 2.5,
+            plugins: [ RevealNotes, RevealHighlight, RevealZoom ]
+        });
+
+        // Dynamic Font Scaling with '+' and '-' keys
+        let fontScale = 1.0;
+        window.addEventListener('keydown', (e) => {
+            if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+            
+            if (e.key === '+' || e.key === '=') {
+                fontScale = Math.min(1.6, fontScale + 0.1);
+                document.querySelector('.reveal').style.fontSize = (27 * fontScale) + 'px';
+            } else if (e.key === '-' || e.key === '_') {
+                fontScale = Math.max(0.7, fontScale - 0.1);
+                document.querySelector('.reveal').style.fontSize = (27 * fontScale) + 'px';
+            } else if (e.key === '0') {
+                fontScale = 1.0;
+                document.querySelector('.reveal').style.fontSize = '27px';
+            }
+        });
+    </script>
+</body>
+</html>
