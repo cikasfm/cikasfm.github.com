@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Zilvinas Vilutis | Architecture &amp; Craft Demonstration</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../ico/favicon-32x32.png">
+    
+    <!-- Reveal.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/theme/black.min.css" id="theme">
+    
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom Presentation Theme Styles -->
+    <style>
+        :root {
+            --bg-main: #030712;
+            --card-bg: rgba(17, 24, 39, 0.88);
+            --card-border: rgba(255, 255, 255, 0.12);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent-emerald: #10b981;
+            --accent-cyan: #06b6d4;
+            --accent-amber: #f59e0b;
+            --accent-rose: #f43f5e;
+            --accent-purple: #a855f7;
+            --accent-indigo: #6366f1;
+        }
+
+        .reveal {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #030712;
+            color: var(--text-main);
+            font-size: 23px;
+        }
+
+        .reveal .slides {
+            text-align: left;
+        }
+
+        .slide-glow {
+            position: absolute;
+            top: -15%;
+            left: -10%;
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle at 75% 20%, rgba(99, 102, 241, 0.16), transparent 45%),
+                        radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.12), transparent 40%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+            font-weight: 700 !important;
+            text-transform: none !important;
+            letter-spacing: -0.02em !important;
+            color: #ffffff !important;
+        }
+
+        .slide-header {
+            margin-bottom: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 0.45rem;
+        }
+
+        .slide-title-group h2 {
+            font-size: 1.7rem !important;
+            margin: 0 !important;
+            line-height: 1.2 !important;
+        }
+
+        .slide-subtitle {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-top: 0.15rem;
+            font-weight: 400;
+        }
+
+        .time-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.18rem 0.65rem;
+            border-radius: 9999px;
+            font-size: 0.76rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.15);
+            color: #818cf8;
+            border: 1px solid rgba(99, 102, 241, 0.35);
+            letter-spacing: 0.02em;
+        }
+
+        .badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.16rem 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.08);
+            color: #e5e7eb;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .badge-pill.emerald { background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3); }
+        .badge-pill.amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border-color: rgba(245, 158, 11, 0.3); }
+        .badge-pill.cyan { background: rgba(6, 182, 212, 0.15); color: #38bdf8; border-color: rgba(6, 182, 212, 0.3); }
+        .badge-pill.rose { background: rgba(244, 63, 94, 0.15); color: #fb7185; border-color: rgba(244, 63, 94, 0.3); }
+        .badge-pill.purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; border-color: rgba(168, 85, 247, 0.3); }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .grid-1-2 {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 0.9rem;
+        }
+
+        .grid-2-1 {
+            display: grid;
+            grid-template-columns: 1.65fr 1.35fr;
+            gap: 0.9rem;
+            align-items: stretch;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 9px;
+            padding: 0.85rem;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+            box-sizing: border-box;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.45rem;
+        }
+
+        .card-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            background: rgba(99, 102, 241, 0.2);
+            color: #818cf8;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            flex-shrink: 0;
+        }
+
+        .card-title {
+            font-size: 0.92rem !important;
+            font-weight: 700 !important;
+            margin: 0 !important;
+            color: #ffffff;
+        }
+
+        ul.clean-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul.clean-list li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.81rem;
+            line-height: 1.38;
+            color: #d1d5db;
+        }
+
+        ul.clean-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent-emerald);
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        ul.clean-list li strong {
+            color: #ffffff;
+        }
+
+        .code-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: #93c5fd;
+            background: rgba(59, 130, 246, 0.12);
+            padding: 0.08rem 0.3rem;
+            border-radius: 4px;
+            border: 1px solid rgba(59, 130, 246, 0.25);
+        }
+
+        .step-pill {
+            display: inline-flex;
+            align-items: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            font-weight: bold;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            background: rgba(99, 102, 241, 0.25);
+            color: #a5b4fc;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            margin-right: 0.3rem;
+        }
+
+        .metric-card {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 0.6rem 0.7rem;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 1.45rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .metric-label {
+            font-size: 0.66rem;
+            color: var(--text-muted);
+            margin-top: 0.15rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Perfectly balanced photo cards */
+        .photo-column {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            height: 100%;
+        }
+
+        .photo-card {
+            position: relative;
+            border-radius: 9px;
+            overflow: hidden;
+            border: 1px solid var(--card-border);
+            flex: 1;
+            display: flex;
+            align-items: flex-end;
+            background-size: cover;
+            background-position: center;
+            box-sizing: border-box;
+        }
+
+        .photo-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(3, 7, 18, 0.92) 20%, rgba(3, 7, 18, 0.25) 100%);
+        }
+
+        .photo-card-text {
+            position: relative;
+            z-index: 2;
+            padding: 0.75rem 0.85rem;
+        }
+
+        .arch-diagram {
+            background: rgba(10, 15, 29, 0.95);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 8px;
+            padding: 0.6rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.3rem;
+            margin: 0.5rem 0;
+        }
+
+        .arch-box {
+            padding: 0.35rem 0.5rem;
+            border-radius: 5px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.05);
+            flex: 1;
+        }
+
+        .arch-arrow {
+            color: var(--accent-cyan);
+            font-weight: bold;
+        }
+
+        /* 5-Column Career Timeline */
+        .career-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0.55rem;
+        }
+
+        .career-col {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 0.65rem 0.55rem;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .career-col.highlight {
+            border-color: rgba(99, 102, 241, 0.5);
+            background: rgba(20, 27, 45, 0.92);
+        }
+
+        .nav-hint {
+            position: fixed;
+            bottom: 12px;
+            left: 20px;
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.4);
+            z-index: 100;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            pointer-events: none;
+        }
+        
+        .kbd {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            padding: 1px 5px;
+            font-family: 'JetBrains Mono', monospace;
+            color: #e5e7eb;
+        }
+
+        .notes-indicator {
+            position: fixed;
+            bottom: 12px;
+            right: 20px;
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.5);
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        .reveal .slide-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.76rem;
+            color: var(--accent-cyan);
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 4px;
+            padding: 2px 6px;
+            right: 20px;
+            bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- ========================================== -->
+            <!-- SLIDE 1: TITLE & AGENDA                    -->
+            <!-- ========================================== -->
+            <section data-background-color="#030712">
+                <div class="slide-glow"></div>
+                <div class="slide-content">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <span class="badge-pill emerald"><i class="fa-solid fa-code"></i> Staff Software Engineer</span>
+                        <span class="badge-pill cyan"><i class="fa-solid fa-database"></i> Distributed Systems &amp; Storage</span>
+                        <span class="badge-pill amber"><i class="fa-solid fa-bolt"></i> Zero-Downtime Data Architecture</span>
+                    </div>
+
+                    <h1 style="font-size: 2.5rem !important; line-height: 1.15; margin-bottom: 0.55rem;">
+                        Distributed Systems &amp; Data Reliability: <br>
+                        <span style="background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Introduction &amp; Craft Demonstration</span>
+                    </h1>
+
+                    <p style="font-size: 1rem; color: #d1d5db; max-width: 900px; margin-bottom: 1.4rem; line-height: 1.45;">
+                        A personal look at who I am outside work and my 20-year path, followed by an architectural deep dive into a 2TB zero-downtime DynamoDB streaming migration in GoLang at Okta.
+                    </p>
+
+                    <!-- Agenda Split -->
+                    <div class="grid-2" style="max-width: 940px;">
+                        <div class="card" style="border-left: 4px solid var(--accent-amber);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+                                <div style="font-weight: 700; font-size: 0.95rem; color: #fbbf24;">
+                                    <i class="fa-solid fa-user"></i> Part 1: Personal &amp; Career Intro
+                                </div>
+                                <span class="time-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border-color: rgba(245, 158, 11, 0.3);">
+                                    <i class="fa-regular fa-clock"></i> 5 Mins (2 Slides)
+                                </span>
+                            </div>
+                            <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0;">
+                                1. Personal crafts &amp; hobbies (Porsche DIY #827, Torrey Pines surf, Breville ritual, analog audio).<br>
+                                2. 20-year career journey (EIS Group ➔ Grid Dynamics ➔ Intuit ➔ Okta ➔ Sony).
+                            </p>
+                        </div>
+
+                        <div class="card" style="border-left: 4px solid var(--accent-emerald);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+                                <div style="font-weight: 700; font-size: 0.95rem; color: #34d399;">
+                                    <i class="fa-solid fa-rocket"></i> Part 2: Proud Project Review
+                                </div>
+                                <span class="time-badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">
+                                    <i class="fa-regular fa-clock"></i> 10 Mins (3 Slides)
+                                </span>
+                            </div>
+                            <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0;">
+                                <strong>Okta 2TB Live DynamoDB Migration</strong>: 4-phase rollout, S3 streaming pipeline, 1-thread-per-partition worker pool, 5% WCU partition caps &amp; S3 state checkpoints.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 1.1rem; display: flex; align-items: center; gap: 1.25rem; font-size: 0.78rem; color: var(--text-muted);">
+                        <span><strong style="color: #ffffff;">Speaker:</strong> Zilvinas Vilutis</span>
+                        <span>•</span>
+                        <span><i class="fa-brands fa-github"></i> <code style="color: #93c5fd;">cikasfm</code></span>
+                        <span>•</span>
+                        <span><i class="fa-brands fa-linkedin"></i> <code style="color: #93c5fd;">zvilutis</code></span>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <strong>[0:00 - 0:45] Title & Opening:</strong>
+                    "Hi everyone, thank you for having me today! I'm really excited to spend this time together. 
+                    Today's presentation has two clear parts: 
+                    First, a 5-minute personal introduction to share who I am outside work, my craftsman philosophy, and a quick summary of my 20-year engineering journey.
+                    Second, a 10-minute deep dive into a project I'm especially proud of: building a zero-downtime DynamoDB schema migration service in GoLang at Okta that migrated ~2TB of live production records with zero customer disruption.
+                    I chose this project because it demonstrates handling high-scale distributed data, strict customer SLAs, avoiding partition throttling, and building fault-tolerant services from first principles."
+                </aside>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- SLIDE 2: PERSONAL INTRODUCTION (5 MINS - 1)-->
+            <!-- ========================================== -->
+            <section data-background-color="#030712">
+                <div class="slide-glow"></div>
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <h2>The Human &amp; Craftsman Behind the Code</h2>
+                            <div class="slide-subtitle">Vilnius roots, San Diego life, and what fuels my curiosity</div>
+                        </div>
+                        <span class="time-badge"><i class="fa-regular fa-clock"></i> 5 Mins • Personal Intro (1/2)</span>
+                    </div>
+
+                    <div class="grid-2-1">
+                        <!-- Left Column: Story & Passions (3 Rows) -->
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <!-- Identity / Mindset Card -->
+                            <div class="card" style="padding: 0.8rem;">
+                                <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.3rem;">
+                                    <span class="badge-pill emerald">🇱🇹 Vilnius Roots ➔ 🌴 San Diego</span>
+                                    <span class="badge-pill amber">👨‍👧‍👦 Father of 3</span>
+                                    <span class="badge-pill cyan">20+ Years Scaling Tech</span>
+                                </div>
+                                <p style="font-size: 0.81rem; line-height: 1.42; margin: 0; color: #e5e7eb;">
+                                    <strong>My Engineering Philosophy:</strong> I like to understand systems from the inside out and solve root causes from first principles. Whether diagnosing distributed tail latency across microservices or wrenching on my car in the garage (brakes, fluids, suspension, custom spoilers), I focus on clean design, reliability, and building things that last.
+                                </p>
+                            </div>
+
+                            <!-- Row 2: Porsche DIY + Surf -->
+                            <div class="grid-2">
+                                <!-- Passion 1: Porsche DIY -->
+                                <div class="card" style="padding: 0.75rem; border-color: rgba(245, 158, 11, 0.25);">
+                                    <div class="card-header" style="margin-bottom: 0.25rem;">
+                                        <div class="card-icon" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border-color: rgba(245, 158, 11, 0.3);">
+                                            <i class="fa-solid fa-car-side"></i>
+                                        </div>
+                                        <div class="card-title" style="font-size: 0.88rem !important;">Porsche DIY &amp; Autocross</div>
+                                    </div>
+                                    <p style="font-size: 0.76rem; color: #d1d5db; margin: 0; line-height: 1.35;">
+                                        PCA Autocross (#827) in my 981 Boxster. Hands-on garage maintenance: brakes, fluid flushes, suspension tuning, and custom upgrades.
+                                    </p>
+                                </div>
+
+                                <!-- Passion 2: Surf -->
+                                <div class="card" style="padding: 0.75rem; border-color: rgba(6, 182, 212, 0.25);">
+                                    <div class="card-header" style="margin-bottom: 0.25rem;">
+                                        <div class="card-icon" style="background: rgba(6, 182, 212, 0.15); color: #38bdf8; border-color: rgba(6, 182, 212, 0.3);">
+                                            <i class="fa-solid fa-water"></i>
+                                        </div>
+                                        <div class="card-title" style="font-size: 0.88rem !important;">Torrey Pines Surf</div>
+                                    </div>
+                                    <p style="font-size: 0.76rem; color: #d1d5db; margin: 0; line-height: 1.35;">
+                                        Catching a wave at Torrey Pines beach in San Diego during weekends is the best mental reset.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Row 3: Daily Brew + Vinyl -->
+                            <div class="grid-2">
+                                <!-- Passion 3: Daily Brew -->
+                                <div class="card" style="padding: 0.75rem; border-color: rgba(251, 113, 133, 0.25);">
+                                    <div class="card-header" style="margin-bottom: 0.25rem;">
+                                        <div class="card-icon" style="background: rgba(251, 113, 133, 0.15); color: #fb7185; border-color: rgba(251, 113, 133, 0.3);">
+                                            <i class="fa-solid fa-mug-hot"></i>
+                                        </div>
+                                        <div class="card-title" style="font-size: 0.88rem !important;">The Daily Brew</div>
+                                    </div>
+                                    <p style="font-size: 0.76rem; color: #d1d5db; margin: 0; line-height: 1.35;">
+                                        Brewing lattes twice daily on my Breville espresso machine, perfecting that micro-foam every time.
+                                    </p>
+                                </div>
+
+                                <!-- Passion 4: Vinyl Rig -->
+                                <div class="card" style="padding: 0.75rem; border-color: rgba(168, 85, 247, 0.25);">
+                                    <div class="card-header" style="margin-bottom: 0.25rem;">
+                                        <div class="card-icon" style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border-color: rgba(168, 85, 247, 0.3);">
+                                            <i class="fa-solid fa-compact-disc"></i>
+                                        </div>
+                                        <div class="card-title" style="font-size: 0.88rem !important;">Analog Vinyl Rig</div>
+                                    </div>
+                                    <p style="font-size: 0.76rem; color: #d1d5db; margin: 0; line-height: 1.35;">
+                                        Listening to old vinyl on my old-school Technics receiver + Klipsch setup. Daft Punk, Fatboy Slim, Linkin Park, Bob Marley &amp; Harry Styles.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: 2 Photo Cards perfectly matching full height -->
+                        <div class="photo-column">
+                            <div class="photo-card" style="background-image: url('../img/lifestyle/autocross.jpg'); background-position: center 60%;">
+                                <div class="photo-card-overlay"></div>
+                                <div class="photo-card-text">
+                                    <span class="badge-pill amber" style="font-size: 0.66rem;"><i class="fa-solid fa-flag-checkered"></i> PCA Autocross #827</span>
+                                    <div style="font-size: 0.78rem; font-weight: 600; color: #fff; margin-top: 0.15rem;">981 Boxster Track &amp; DIY Garage</div>
+                                </div>
+                            </div>
+
+                            <div class="photo-card" style="background-image: url('../img/lifestyle/surf.jpg'); background-position: center 35%;">
+                                <div class="photo-card-overlay"></div>
+                                <div class="photo-card-text">
+                                    <span class="badge-pill cyan" style="font-size: 0.66rem;"><i class="fa-solid fa-water"></i> Torrey Pines, San Diego</span>
+                                    <div style="font-size: 0.78rem; font-weight: 600; color: #fff; margin-top: 0.15rem;">Weekend Surf &amp; Ocean Reset</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <strong>[0:45 - 2:30] Personal Introduction (1/2):</strong>
+                    - "To share who I am: I grew up in Vilnius, Lithuania, earned my B.S. in Computer Science, and moved to California where I’ve spent the last decade in San Diego with my wife, 3 kids, and family dog."
+                    - "What defines me as an engineer is treating software like a craftsman treats a mechanical engine. I’m a passionate Porsche DIY wrencher: I race my 981 Boxster in PCA Autocross (car #827), and I do all my own brake jobs, fluid flushes, suspension setup, and personalization."
+                    - "Wrenching taught me the same discipline I use in distributed systems: don't guess at symptoms, inspect tolerances, understand how data flows end-to-end, and build self-healing resilience."
+                    - "Outside the garage and terminal, you'll find me pulling fresh Breville lattes twice daily, catching waves at Torrey Pines beach during weekends, or listening to Daft Punk, Fatboy Slim, and Bob Marley on my old-school Technics and Klipsch vinyl setup."
+                </aside>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- SLIDE 3: CAREER JOURNEY (5 MINS - 2)       -->
+            <!-- ========================================== -->
+            <section data-background-color="#030712">
+                <div class="slide-glow"></div>
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <h2>20-Year Engineering Journey: How I Got Here</h2>
+                            <div class="slide-subtitle">From enterprise policy &amp; payments engines to cloud search, streaming eventing &amp; storage scale</div>
+                        </div>
+                        <span class="time-badge"><i class="fa-regular fa-clock"></i> 5 Mins • Career Overview (2/2)</span>
+                    </div>
+
+                    <!-- 5-Column Career Timeline Grid -->
+                    <div class="career-grid">
+                        
+                        <!-- Col 1: EIS Group -->
+                        <div class="career-col">
+                            <div>
+                                <span class="badge-pill" style="font-size: 0.63rem; margin-bottom: 0.3rem;">2006 – 2016 (10 Yrs)</span>
+                                <h4 style="font-size: 0.88rem; margin: 0 0 0.15rem 0; color: #fff;">EIS Group</h4>
+                                <div style="font-size: 0.7rem; color: var(--accent-cyan); font-weight: 600;">QA ➔ Senior Solutions Architect</div>
+                                <p style="font-size: 0.71rem; color: #d1d5db; margin: 0.35rem 0 0 0; line-height: 1.32;">
+                                    Led Policy subsystem across CRM, Rating (pro-rata calculations), Billing &amp; Claims. Built per-state reusability for <strong>AAA across 40+ US states</strong> &amp; Tier-1 insurers (AIG, Liberty Mutual).
+                                </p>
+                            </div>
+                            <div class="tag-row" style="margin-top: 0.35rem;">
+                                <span class="code-tag">Java EE</span>
+                                <span class="code-tag">Oracle</span>
+                                <span class="code-tag">Multi-State Core</span>
+                            </div>
+                        </div>
+
+                        <!-- Col 2: Grid Dynamics -->
+                        <div class="career-col">
+                            <div>
+                                <span class="badge-pill" style="font-size: 0.63rem; margin-bottom: 0.3rem;">2016 – 2021 (5 Yrs)</span>
+                                <h4 style="font-size: 0.88rem; margin: 0 0 0.15rem 0; color: #fff;">Grid Dynamics</h4>
+                                <div style="font-size: 0.7rem; color: var(--accent-cyan); font-weight: 600;">Senior Tech Lead</div>
+                                <p style="font-size: 0.71rem; color: #d1d5db; margin: 0.35rem 0 0 0; line-height: 1.32;">
+                                    <strong>Macy's</strong>: Scaled catalog 10x (200k ➔ 2M products) &amp; 4x traffic via Solr cascading replication.<br>
+                                    <strong>Home Depot</strong>: Led team of 6 building "Text2Confirm" remote SMS contractor checkout.
+                                </p>
+                            </div>
+                            <div class="tag-row" style="margin-top: 0.35rem;">
+                                <span class="code-tag">Solr / Elastic</span>
+                                <span class="code-tag">Cloud Migration</span>
+                                <span class="code-tag">Team Lead</span>
+                            </div>
+                        </div>
+
+                        <!-- Col 3: Intuit -->
+                        <div class="career-col highlight" style="border-color: rgba(16, 185, 129, 0.4);">
+                            <div>
+                                <span class="badge-pill emerald" style="font-size: 0.63rem; margin-bottom: 0.3rem;">2021 – 2024 (3 Yrs)</span>
+                                <h4 style="font-size: 0.88rem; margin: 0 0 0.15rem 0; color: #fff;">Intuit</h4>
+                                <div style="font-size: 0.7rem; color: var(--accent-emerald); font-weight: 600;">Staff Software Engineer</div>
+                                <p style="font-size: 0.71rem; color: #d1d5db; margin: 0.35rem 0 0 0; line-height: 1.32;">
+                                    Led team of 3 building real-time session event streaming at <strong>40k TPS / 1B+ events/day</strong> (DynamoDB Streams ➔ Lambda ➔ Pulsar ➔ Kafka) for ATO fraud termination &amp; account locking.
+                                </p>
+                            </div>
+                            <div class="tag-row" style="margin-top: 0.35rem;">
+                                <span class="code-tag">Go / Kotlin</span>
+                                <span class="code-tag">40k TPS Stream</span>
+                                <span class="code-tag">ATO Fraud</span>
+                            </div>
+                        </div>
+
+                        <!-- Col 4: Okta -->
+                        <div class="career-col highlight" style="border-color: rgba(99, 102, 241, 0.6); background: rgba(30, 27, 75, 0.3);">
+                            <div>
+                                <span class="badge-pill purple" style="font-size: 0.63rem; margin-bottom: 0.3rem;">2024 – 2025</span>
+                                <h4 style="font-size: 0.88rem; margin: 0 0 0.15rem 0; color: #fff;">Okta</h4>
+                                <div style="font-size: 0.7rem; color: var(--accent-purple); font-weight: 600;">Staff Software Engineer</div>
+                                <p style="font-size: 0.71rem; color: #d1d5db; margin: 0.35rem 0 0 0; line-height: 1.32;">
+                                    Scaled Fine-Grained Authorization (OpenFGA / ReBAC). Built idempotent batch relationship writes &amp; architected the <strong>zero-downtime 2TB DynamoDB streaming migration</strong> in Go.
+                                </p>
+                            </div>
+                            <div class="tag-row" style="margin-top: 0.35rem;">
+                                <span class="code-tag">GoLang</span>
+                                <span class="code-tag">OpenFGA</span>
+                                <span class="code-tag">2TB Migration</span>
+                            </div>
+                        </div>
+
+                        <!-- Col 5: Sony -->
+                        <div class="career-col">
+                            <div>
+                                <span class="badge-pill" style="font-size: 0.63rem; margin-bottom: 0.3rem;">2025 – Present</span>
+                                <h4 style="font-size: 0.88rem; margin: 0 0 0.15rem 0; color: #fff;">Sony</h4>
+                                <div style="font-size: 0.7rem; color: var(--accent-cyan); font-weight: 600;">Staff Software Engineer</div>
+                                <p style="font-size: 0.71rem; color: #d1d5db; margin: 0.35rem 0 0 0; line-height: 1.32;">
+                                    Kong-based API Gateway for PaaS. Decoupled auth via authenticated client (API Key + MFA) token exchange with multi-level caching, unblocking Hosted Checkout.
+                                </p>
+                            </div>
+                            <div class="tag-row" style="margin-top: 0.35rem;">
+                                <span class="code-tag">Kong Gateway</span>
+                                <span class="code-tag">Token Exchange</span>
+                                <span class="code-tag">Spring Boot 3</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Career Arc Summary Banner -->
+                    <div class="card" style="margin-top: 0.55rem; padding: 0.5rem 0.8rem; display: flex; align-items: center; justify-content: space-between; background: rgba(15, 23, 42, 0.7);">
+                        <div style="font-size: 0.76rem; color: #e5e7eb;">
+                            <strong style="color: #38bdf8;"><i class="fa-solid fa-graduation-cap"></i> Education &amp; Roots:</strong> B.S. in Computer Science from Vilnius Tech (Lithuania) 🇱🇹 • 20 years progressing from QA to Senior Solutions Architect to Staff Engineer.
+                        </div>
+                        <div style="font-size: 0.74rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace;">
+                            Focus: High-Scale Distributed Systems &amp; Data Reliability
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <strong>[2:30 - 5:00] Career Journey (2/2):</strong>
+                    - "To give a high-level summary of my 20-year career progression:"
+                    - "1. Foundation at EIS Group (10 years): Started as QA/Automation, grew into Senior Solutions Architect. Led Policy subsystem integration across CRM, Billing, Claims, and Rating engines, and designed per-state product architecture for AAA across 40+ US states."
+                    - "2. High-Scale Search & Team Leadership at Grid Dynamics (5 years): Scaled Macy's catalog 10x from 200k to 2M products on Solr with zero Black Friday downtime. At Home Depot, led a team of 6 building Text2Confirm remote contractor checkout."
+                    - "3. Real-Time Streaming & Identity at Intuit (3 years): Led a team of 3 building a 40k TPS / 1B+ events/day pipeline streaming DynamoDB Streams to Pulsar and Kafka for Account Takeover (ATO) fraud session termination."
+                    - "4. Fine-Grained Authorization at Okta: Built idempotent tuple batch writes and architected our 2TB live DynamoDB streaming migration in Go."
+                    - "5. Platform & Gateway at Sony: Delivered PaaS token exchange and Kong gateway integration unblocking Hosted Checkout."
+                    - "Now, let’s transition to the craft demonstration: diving deep into the Okta 2TB DynamoDB migration."
+                </aside>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- SLIDE 4: THE CHALLENGE - 4 PHASES & RCUS   -->
+            <!-- ========================================== -->
+            <section data-background-color="#030712">
+                <div class="slide-glow"></div>
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <h2>The Challenge: 2TB DynamoDB Schema Evolution &amp; Partition Limits</h2>
+                            <div class="slide-subtitle">No DDL rename support, 4-phase rollout strategy, and partition RCU/WCU budget constraints</div>
+                        </div>
+                        <span class="time-badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">
+                            <i class="fa-regular fa-clock"></i> Part 2: The Challenge
+                        </span>
+                    </div>
+
+                    <div class="grid-2">
+                        <!-- Column 1: The NoSQL Schema Evolution Constraint -->
+                        <div class="card" style="border-top: 3px solid var(--accent-cyan);">
+                            <div class="card-header">
+                                <div class="card-icon" style="background: rgba(6, 182, 212, 0.15); color: #38bdf8; border-color: rgba(6, 182, 212, 0.3);">
+                                    <i class="fa-solid fa-table"></i>
+                                </div>
+                                <div class="card-title">The NoSQL Schema Evolution Protocol</div>
+                            </div>
+                            
+                            <p style="font-size: 0.79rem; color: #d1d5db; margin: 0 0 0.45rem 0; line-height: 1.35;">
+                                Unlike relational databases with <span class="code-tag">ALTER TABLE RENAME</span>, DynamoDB requires an in-place attribute migration across <strong style="color: #38bdf8;">~2 TB of live data</strong> across 4 distinct deployment phases:
+                            </p>
+
+                            <ul class="clean-list">
+                                <li>
+                                    <span class="step-pill">Phase 1</span> <strong>Dual-Write Application Code:</strong> Read from old attribute, write concurrently to both old &amp; new attributes.
+                                </li>
+                                <li>
+                                    <span class="step-pill">Phase 2</span> <strong>Backfill Migration Service (My Focus):</strong> Stream historical data, populate new column for rows not yet updated.
+                                </li>
+                                <li>
+                                    <span class="step-pill">Phase 3</span> <strong>Cutover Application Code:</strong> Read and write exclusively from new column.
+                                </li>
+                                <li>
+                                    <span class="step-pill">Phase 4</span> <strong>Cleanup Pass:</strong> Run cleanup service to delete legacy column attributes.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 2: Partition Throttle & Customer Impact Risks -->
+                        <div class="card" style="border-top: 3px solid var(--accent-rose);">
+                            <div class="card-header">
+                                <div class="card-icon" style="background: rgba(244, 63, 94, 0.15); color: #fb7185; border-color: rgba(244, 63, 94, 0.3);">
+                                    <i class="fa-solid fa-triangle-exclamation"></i>
+                                </div>
+                                <div class="card-title">Partition Throttle Risks on Live Production</div>
+                            </div>
+                            <ul class="clean-list">
+                                <li>
+                                    <strong>RCU Starvation on Direct Reads:</strong> Running parallel table scans directly against DynamoDB would exhaust per-partition Read Capacity Units (RCUs), causing immediate read throttling for live enterprise auth queries.
+                                </li>
+                                <li>
+                                    <strong>WCU Exhaustion on Backfill Writes:</strong> High-speed batch updates risk exhausting per-partition Write Capacity Units (WCUs), causing 500 error spikes during live tenant writes.
+                                </li>
+                                <li>
+                                    <strong>Zero Customer Impact Constraint:</strong> Must guarantee zero downtime, zero auth latency degradation, and zero maintenance windows throughout a multi-week migration run.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Flow Diagram -->
+                    <div class="arch-diagram">
+                        <div class="arch-box" style="border-color: #fbbf24;">
+                            <div style="color: #fbbf24; font-weight: bold;">Phase 1: Dual-Write</div>
+                            <div style="font-size: 0.65rem; color: #9ca3af;">App writes old + new</div>
+                        </div>
+                        <div class="arch-arrow">➔</div>
+                        <div class="arch-box" style="border-color: #38bdf8; background: rgba(99, 102, 241, 0.15);">
+                            <div style="color: #a5b4fc; font-weight: bold;">Phase 2: Backfill (S3+Go)</div>
+                            <div style="font-size: 0.65rem; color: #34d399;">2TB Historical Backfill</div>
+                        </div>
+                        <div class="arch-arrow">➔</div>
+                        <div class="arch-box" style="border-color: #34d399;">
+                            <div style="color: #34d399; font-weight: bold;">Phase 3: Cutover</div>
+                            <div style="font-size: 0.65rem; color: #9ca3af;">Read/write new column</div>
+                        </div>
+                        <div class="arch-arrow">➔</div>
+                        <div class="arch-box" style="border-color: #c084fc;">
+                            <div style="color: #c084fc; font-weight: bold;">Phase 4: Cleanup</div>
+                            <div style="font-size: 0.65rem; color: #9ca3af;">Drop legacy attribute</div>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <strong>[5:00 - 7:30] Proud Project - The Challenge (4 Phases & RCU/WCU Constraints):</strong>
+                    - "Let's walk through the architecture step by step."
+                    - "The Core Challenge: In DynamoDB, you don't have an 'ALTER TABLE RENAME' command like in PostgreSQL or MySQL. Renaming an attribute across 2TB of live records requires a 4-phase rollout:
+                      Phase 1: Update application code to dual-write (read old, write to both old and new).
+                      Phase 2: Build a backfill migration service to copy data to the new attribute for all historical rows.
+                      Phase 3: Update application code to use only the new attribute.
+                      Phase 4: Run a cleanup pass to drop the old attribute."
+                    - "The biggest technical constraint: Customer impact. If we ran the backfill by scanning DynamoDB directly with parallel workers, we would immediately exhaust per-partition RCUs, triggering throttling for live auth queries. And when writing back, high burst writes would exhaust WCUs."
+                    - "Let's look at how I architected the solution in GoLang to eliminate RCU costs and throttle writes safely."
+                </aside>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- SLIDE 5: THE SOLUTION & RESULTS            -->
+            <!-- ========================================== -->
+            <section data-background-color="#030712">
+                <div class="slide-glow"></div>
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <h2>The Solution: S3 Streaming Ingestion &amp; Partition Throttling</h2>
+                            <div class="slide-subtitle">Zero-RCU S3 snapshots, 1-thread-per-partition worker pool, 5% WCU caps &amp; Datadog observability</div>
+                        </div>
+                        <span class="time-badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">
+                            <i class="fa-regular fa-clock"></i> Part 2: Solution &amp; Results
+                        </span>
+                    </div>
+
+                    <div class="grid-1-2">
+                        <!-- Left Column: Metrics & Operational Highlights -->
+                        <div style="display: flex; flex-direction: column; gap: 0.55rem;">
+                            <div style="font-size: 0.74rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.3rem;">
+                                <i class="fa-solid fa-check-double"></i> Production Results
+                            </div>
+                            
+                            <div class="metric-card" style="border-color: rgba(16, 185, 129, 0.4);">
+                                <div class="metric-value" style="color: #34d399;">~2 TB</div>
+                                <div class="metric-label">Completed in a Couple Weeks</div>
+                            </div>
+                            
+                            <div class="metric-card" style="border-color: rgba(56, 189, 248, 0.4);">
+                                <div class="metric-value" style="color: #38bdf8;">0 Impact</div>
+                                <div class="metric-label">Zero RCU Overhead • 0 Outages</div>
+                            </div>
+
+                            <div class="metric-card" style="border-color: rgba(168, 85, 247, 0.4);">
+                                <div class="metric-value" style="color: #c084fc;">Scale-to-0</div>
+                                <div class="metric-label">Clean Shutdown • Reusable Engine</div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Step-by-Step Architectural Solution -->
+                        <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                            <!-- Step 1: Export to S3 -->
+                            <div class="card" style="padding: 0.7rem;">
+                                <div class="card-header" style="margin-bottom: 0.25rem;">
+                                    <div class="card-icon" style="background: rgba(6, 182, 212, 0.15); color: #38bdf8; border-color: rgba(6, 182, 212, 0.3);">
+                                        <i class="fa-solid fa-file-export"></i>
+                                    </div>
+                                    <div class="card-title">1. Point-in-Time Export to S3 (Zero RCU Cost)</div>
+                                </div>
+                                <p style="font-size: 0.78rem; color: #d1d5db; margin: 0; line-height: 1.35;">
+                                    Used DynamoDB native S3 export at negligible cost. Reads occurred entirely in S3 with <strong>zero RCU consumption</strong> on the live table. In-flight updates were safe because application dual-writing was already active.
+                                </p>
+                            </div>
+
+                            <!-- Step 2: 1-Thread-Per-Partition & 5% WCU Cap -->
+                            <div class="card" style="padding: 0.7rem;">
+                                <div class="card-header" style="margin-bottom: 0.25rem;">
+                                    <div class="card-icon" style="background: rgba(99, 102, 241, 0.15); color: #818cf8; border-color: rgba(99, 102, 241, 0.3);">
+                                        <i class="fa-solid fa-gears"></i>
+                                    </div>
+                                    <div class="card-title">2. 1-Thread-Per-Partition &amp; Strict 5% WCU Throttling</div>
+                                </div>
+                                <p style="font-size: 0.78rem; color: #d1d5db; margin: 0; line-height: 1.35;">
+                                    Knowing that each S3 export file maps to a single partition, we mapped <strong>1 worker thread per partition</strong> and strictly capped write throughput to <strong>max 5% WCU per thread</strong>. Running 50 concurrent threads across hundreds of partitions mathematically guaranteed zero partition throttling.
+                                </p>
+                            </div>
+
+                            <!-- Step 3: State Persistence in S3 & Observability -->
+                            <div class="card" style="padding: 0.7rem;">
+                                <div class="card-header" style="margin-bottom: 0.25rem;">
+                                    <div class="card-icon" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">
+                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                    </div>
+                                    <div class="card-title">3. State Persistence in S3 &amp; K8s Restart Recovery</div>
+                                </div>
+                                <p style="font-size: 0.78rem; color: #d1d5db; margin: 0; line-height: 1.35;">
+                                    Persisted checkpoints directly in S3 metadata (keeping DynamoDB clean of migration trash). Allowed seamless resumes during K8s pod evictions or node upgrades. Full state &amp; progress telemetry monitored in <strong>Datadog</strong>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <strong>[7:30 - 11:30] Proud Project - The Solution & Results:</strong>
+                    - "Here is the solution I engineered:
+                      1. Export to S3: Instead of scanning DynamoDB, we triggered a native DynamoDB point-in-time export to S3. This cost negligible dollars, was significantly faster, and completely eliminated RCU consumption on the live table. In-flight records were safe because the application was already dual-writing.
+                      2. 1-Thread-Per-Partition & 5% WCU Cap: You cannot see per-partition WCU utilization in CloudWatch. So what we did instead is architectural: knowing each S3 export file maps to a single partition, we assigned 1 worker thread per partition and capped write throughput to max 5% WCU per thread. Even running 50 threads in parallel across hundreds of partitions, we mathematically guaranteed we never starved live customer writes.
+                      3. State Persistence in S3: We stored migration checkpoints and offsets directly in S3. This kept DynamoDB completely clean of temporary migration markers, and when Kubernetes evicted pods or upgraded nodes, the workers resumed deterministically from the exact byte offset."
+                    - "Results: Migrated ~2TB in a couple of weeks with zero customer impact, tracked everything in Datadog, scaled the service to zero when done, and architected it as a reusable engine for future migrations."
+                </aside>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- SLIDE 6: LEARNINGS & HINDSIGHT             -->
+            <!-- ========================================== -->
+            <section data-background-color="#030712">
+                <div class="slide-glow"></div>
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <div class="slide-title-group">
+                            <h2>Reflections, Learnings &amp; Hindsight</h2>
+                            <div class="slide-subtitle">Architectural validation, operational trade-offs, and what I would do differently</div>
+                        </div>
+                        <span class="time-badge" style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border-color: rgba(168, 85, 247, 0.3);">
+                            <i class="fa-regular fa-clock"></i> Part 2: Hindsight &amp; Learnings
+                        </span>
+                    </div>
+
+                    <div class="grid-2">
+                        <!-- What Succeeded / Key Learnings -->
+                        <div class="card" style="border-top: 3px solid var(--accent-emerald);">
+                            <div class="card-header">
+                                <div class="card-icon" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">
+                                    <i class="fa-solid fa-thumbs-up"></i>
+                                </div>
+                                <div class="card-title">What Validated the Architectural Choices</div>
+                            </div>
+                            <ul class="clean-list">
+                                <li>
+                                    <strong>5% Per-Thread Partition Capping:</strong> Modeling write limits per partition file rather than relying on global table capacity gave mathematical certainty that no individual partition would ever throttle live traffic.
+                                </li>
+                                <li>
+                                    <strong>S3 Snapshot vs Direct Scan:</strong> Exporting to S3 completely insulated our live production table from read pressure, eliminating the need to provision expensive temporary RCUs.
+                                </li>
+                                <li>
+                                    <strong>S3 Checkpoint Storage:</strong> Keeping migration state out of DynamoDB prevented table bloat and schema pollution while making K8s pod restarts effortless.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- In Hindsight / What I'd Do Differently -->
+                        <div class="card" style="border-top: 3px solid var(--accent-amber);">
+                            <div class="card-header">
+                                <div class="card-icon" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border-color: rgba(245, 158, 11, 0.3);">
+                                    <i class="fa-solid fa-lightbulb"></i>
+                                </div>
+                                <div class="card-title">Considerations &amp; Trade-offs in Hindsight</div>
+                            </div>
+                            <ul class="clean-list">
+                                <li>
+                                    <strong>In-Memory Pre-Filtering for Dual-Written Records:</strong> For records already updated by Phase 1 application dual-writes during the export window, adding an in-memory check to skip redundant writes earlier would save unnecessary WCU burn.
+                                </li>
+                                <li>
+                                    <strong>Continuous Hash Sampling Reconciler:</strong> Building an automated sampling and hash verification worker to run in parallel with the migration rather than executing post-migration validation checks.
+                                </li>
+                                <li>
+                                    <strong>Automated Cutover Gates:</strong> Automating the parity validation metrics in Datadog to trigger CI/CD deployment pipelines for Phase 3 cutover once backfill reached 100%.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Closing / 2-Min Script Transition -->
+                    <div class="card" style="margin-top: 0.65rem; background: rgba(99, 102, 241, 0.1); border-color: rgba(99, 102, 241, 0.3); text-align: center; padding: 0.6rem;">
+                        <div style="font-weight: 700; color: #ffffff; font-size: 0.86rem;">
+                            <i class="fa-solid fa-comments" style="color: #38bdf8;"></i> Thank you! Ready to dive into technical discussions, Q&amp;A, and the craft demonstration.
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <strong>[11:30 - 15:00] Proud Project - Learnings & Hindsight (Closing):</strong>
+                    - "To conclude with my reflections and what I learned in hindsight:"
+                    - "What validated the architecture:
+                      1. Exporting to S3 gave us zero RCU overhead on the live database.
+                      2. Capping each thread to 5% WCU per partition mathematically prevented hot partition throttling across 50 concurrent workers.
+                      3. Storing state checkpoints in S3 kept DynamoDB clean of migration trash while making Kubernetes pod restarts seamless."
+                    - "What I’d consider in hindsight:
+                      1. In-Memory Pre-filtering: Checking if the row was already dual-written during the export window to skip the write early in memory and save WCUs.
+                      2. Continuous Sampling Reconciler: Running a background sampling worker in parallel with the migration to verify parity on the fly rather than running validation scripts at the end."
+                    - "Overall, this project embodied my core philosophy: understand the machine, respect tolerances, build self-healing resilience, and protect customer data integrity above all else."
+                    - "Thank you so much, and I’d love to answer any questions or dive into any part of the architecture!"
+                </aside>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Navigation & Presenter Hints -->
+    <div class="nav-hint">
+        <span>Navigate: <span class="kbd">Space</span> / <span class="kbd">←</span> <span class="kbd">→</span></span>
+        <span>Overview: <span class="kbd">Esc</span> / <span class="kbd">O</span></span>
+        <span>Fullscreen: <span class="kbd">F</span></span>
+    </div>
+
+    <div class="notes-indicator">
+        <span>Speaker Notes: <span class="kbd">S</span></span>
+    </div>
+
+    <!-- Reveal.js Scripts & Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/notes/notes.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/highlight/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/zoom/zoom.min.js"></script>
+
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: 'c/t',
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            controls: true,
+            controlsTutorial: false,
+            progress: true,
+            center: true,
+            touch: true,
+            loop: false,
+            keyboard: true,
+            overview: true,
+            pdfSeparateFragments: false,
+            width: 1200,
+            height: 700,
+            margin: 0.06,
+            minScale: 0.2,
+            maxScale: 2.0,
+            plugins: [ RevealNotes, RevealHighlight, RevealZoom ]
+        });
+    </script>
+</body>
+</html>
