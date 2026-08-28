@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 32" height="32">
+  <!-- Credit Karma Green Emblem -->
+  <circle cx="16" cy="16" r="14" fill="#008600"/>
+  <text x="16" y="21" text-anchor="middle" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="12">CK</text>
+  <!-- Credit Karma Typography -->
+  <text x="36" y="21" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="13.5" letter-spacing="-0.2">credit karma</text>
+</svg>
