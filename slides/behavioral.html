@@ -368,7 +368,7 @@
                         </div>
                         <div class="card" style="border-left: 3px solid #34d399;">
                             <strong style="color: #34d399;">2. High-Risk Technical Craft</strong>
-                            <div style="color: #9ca3af; font-size: 0.72rem; margin-top: 0.2rem;">Okta 2TB DynamoDB Migration • 1-thread/partition 5% WCU cap</div>
+                            <div style="color: #9ca3af; font-size: 0.72rem; margin-top: 0.2rem;">Okta ReBAC • 2TB Live Migration &amp; Strategic Pivot to Aurora DSQL</div>
                         </div>
                         <div class="card" style="border-left: 3px solid #fbbf24;">
                             <strong style="color: #fbbf24;">3. Team Leadership &amp; Scale</strong>
@@ -471,15 +471,15 @@
                 <div class="slide-content">
                     <div class="slide-header">
                         <div class="slide-title-group">
-                            <h2>Story 2: High-Risk Technical Execution &amp; Scale</h2>
-                            <div class="slide-subtitle">Okta: Zero-downtime 2TB DynamoDB live schema migration in GoLang</div>
+                            <h2>Story 2: High-Risk Technical Craft &amp; Strategic Pivot</h2>
+                            <div class="slide-subtitle">Okta: 2TB DynamoDB live dual-write execution &amp; strategic architectural pivot to Aurora DSQL</div>
                         </div>
-                        <span class="competency-badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">Technical Craft &amp; Risk Mitigation</span>
+                        <span class="competency-badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">Technical Craft &amp; Architectural Alignment</span>
                     </div>
 
                     <div class="trigger-box">
                         <strong style="color: #fbbf24;"><i class="fa-solid fa-bullhorn"></i> Question Triggers:</strong>
-                        "Tell me about your most complex technical project" • "Tell me about a time you handled extreme operational risk" • "How do you ensure zero downtime during large database migrations?"
+                        "Tell me about your most complex technical project" • "Tell me about a time a project pivoted or had to be stopped" • "How do you evaluate architectural alignment vs execution?"
                     </div>
 
                     <div class="grid-2">
@@ -487,14 +487,14 @@
                         <div class="card">
                             <div style="margin-bottom: 0.45rem;">
                                 <span class="star-badge star-s">SITUATION</span>
-                                <span style="font-size: 0.79rem; color: #d1d5db;">
-                                    Okta’s Fine-Grained Authorization service required a schema evolution and column rename across ~2 TB of active production DynamoDB records. In NoSQL there is no <span class="code-tag">ALTER TABLE RENAME</span>. If we scanned directly, we'd starve per-partition RCUs/WCUs and break enterprise authentication for Fortune 500 tenants.
+                                <span style="font-size: 0.77rem; color: #d1d5db; line-height: 1.35; display: block; margin-top: 0.2rem;">
+                                    We had a 2TB DynamoDB cluster backing our ReBAC authorization engine (OpenFGA). Traffic was read-heavy (~10k read TPS, 50% DAX cached; writes ~1% at ~100 TPS). But during tenant onboarding, batch writes spiked to 300+ TPS. Our <span class="code-tag">TupleKey</span> schemas used verbose attribute names (<span class="code-tag">relation</span>, <span class="code-tag">condition</span>), pushing P90 records to <strong>~1.05 KB</strong>—crossing the strict 1KB WCU boundary. With 2x Transactional Writes and 3-region Global Tables, this doubled WCU burn, triggering severe write amplification and violent partition throttling.
                                 </span>
                             </div>
                             <div>
                                 <span class="star-badge star-t">TASK</span>
-                                <span style="font-size: 0.79rem; color: #d1d5db;">
-                                    Architect a background backfill migration service that could migrate 2TB of data over several weeks with 100% data integrity, zero latency impact, and resilient recovery from K8s pod restarts.
+                                <span style="font-size: 0.77rem; color: #d1d5db; line-height: 1.35; display: block; margin-top: 0.2rem;">
+                                    Architect and ship a zero-downtime GoLang streaming ETL pipeline to minify schema under 1KB (~950 bytes), double batch throughput, eliminate throttling, and safely migrate 2TB of live production identity data.
                                 </span>
                             </div>
                         </div>
@@ -502,32 +502,34 @@
                         <!-- Right Column: Action & Result -->
                         <div class="card">
                             <div style="margin-bottom: 0.45rem;">
-                                <span class="star-badge star-a">ACTION</span>
+                                <span class="star-badge star-a">ACTION &amp; PIVOT</span>
                                 <ul class="clean-list" style="margin-top: 0.25rem;">
-                                    <li><strong>Exported Snapshot to S3 (0 RCU):</strong> Used native DynamoDB export to S3, eliminating 100% of read load on the live table at negligible cost.</li>
-                                    <li><strong>1-Thread-Per-Partition &amp; 5% WCU Cap:</strong> Mapped 1 Go worker per partition file, capping each thread to max 5% WCU, mathematically guaranteeing no partition throttling across 50 threads.</li>
-                                    <li><strong>Persisted Checkpoints in S3:</strong> Kept state in S3 metadata (no DB pollution), enabling instant resume upon spot node recycles.</li>
+                                    <li><strong>Schema Minification &amp; Dual-Write Shipped:</strong> Mapped verbose fields (<span class="code-tag">relation</span>➔<span class="code-tag">r</span>), cutting base WCU from 2 to 1. <strong>Shipped dual-write code to live production</strong> and completed phase 1.</li>
+                                    <li><strong>S3 Snapshot (0 Live RCU) &amp; 5% Cap:</strong> Offloaded read load via DynamoDB S3 export; capped Go workers to max 5% WCU per partition file (guaranteeing zero live throttling across 50 threads).</li>
+                                    <li><strong>The Strategic Pivot (The Staff Call):</strong> Before cutting over final reads and dropping legacy columns, the architecture board made a strategic macro-pivot: migrating away from DynamoDB to Distributed SQL (<strong>Aurora DSQL</strong>). As migration lead, I made the call to halt the rollout, safely wound down pipelines, preserved audit logs, and redirected team focus to DSQL data modeling.</li>
                                 </ul>
                             </div>
                             <div>
                                 <span class="star-badge star-r">RESULT</span>
-                                <span style="font-size: 0.79rem; color: #34d399; font-weight: 600;">
-                                    Migrated ~2 TB of live data in a couple of weeks with 0 customer impact, 0 outages, 100% data integrity, and scaled service to zero upon completion.
+                                <span style="font-size: 0.77rem; color: #34d399; font-weight: 600; line-height: 1.35; display: block; margin-top: 0.2rem;">
+                                    Proved 2x batch throughput headroom; successfully executed live dual-writing with zero customer downtime. Gracefully halting avoided wasting engineering capital on a deprecating datastore.
                                 </span>
                             </div>
                         </div>
                     </div>
 
                     <div class="signal-box">
-                        <strong>🎯 Staff+ Signal to Deliver:</strong> <em>"I didn't guess with CloudWatch table-level metrics. I solved partition safety through mathematical design: 1 thread per partition file capped at 5% capacity, leaving 95% headroom for customer writes."</em>
+                        <strong>🎯 Staff+ Signal to Deliver:</strong> <em>"Junior engineers think every project must run to completion or it's a failure. Principal engineers know when to ruthlessly kill their own project because the macro-strategy changed. I successfully shipped the dual-write phase to production, but when the org pivoted to Aurora DSQL, I halted the rollout to preserve engineering capital."</em>
                     </div>
                 </div>
 
                 <aside class="notes">
-                    <strong>60-Second Verbal Script:</strong>
-                    "At Okta, we needed to rename columns across 2TB of live production DynamoDB records backing our Fine-Grained Authorization platform. In NoSQL, you don't have DDL renames, and direct table scanning would have exhausted partition RCUs and caused auth outages.
-                    I architected a Go streaming service that consumed point-in-time DynamoDB S3 exports (costing 0 live RCUs). Knowing each S3 file maps to a partition, I assigned 1 worker thread per partition and capped writes to 5% of partition capacity. Even with 50 threads, we mathematically guaranteed zero partition throttling.
-                    We migrated 2TB over several weeks with zero customer impact and 100% data integrity."
+                    <strong>60-Second Verbal Script (The Ultimate Narrative: The Strategic Pivot Migration):</strong>
+                    "[The Problem] We had a 2TB DynamoDB cluster backing our ReBAC authorization engine. Our TupleKey schemas were bloated with verbose names, pushing records just over the 1KB WCU boundary and causing costly write amplification during batch operations and Global Table replication.
+                    [The Execution] I fully architected and built a GoLang streaming ETL pipeline. To ensure zero customer impact on our live identity traffic, I implemented highly parallelized worker routines, state tracking for resume capability, and strict, throttled conditional writes with exponential backoff. We actually pushed this to production and successfully completed the first half of the migration—introducing the new schema columns and running the dual-write phase.
+                    [The Plot Twist - The Strategic Pivot] Right as we were gearing up to cut over the final read paths and drop the legacy columns, the architecture board made a massive strategic pivot: the company decided to move away from DynamoDB entirely for these workloads and adopt a distributed SQL model (Aurora DSQL).
+                    [The Principal-Level Outcome] As the lead on the migration, I made the call to halt the second half of the rollout. Pushing through to finish a DynamoDB-specific schema optimization for a datastore we were actively deprecating would have been a waste of engineering capital. Instead, I safely wound down the migration pipelines, preserved the audit logs, and pivoted the team's focus toward evaluating our data patterns for the new DSQL architecture.
+                    [The Takeaway] It taught me a critical lesson in senior technical leadership: execution velocity is important, but architectural alignment is everything. Building a bulletproof migration framework is valuable, but knowing when to pull the plug because the company's tech stack is evolving is what separates senior execution from blind task-following."
                 </aside>
             </section>
 
@@ -824,10 +826,10 @@
                                 <i class="fa-solid fa-clock"></i> The 90-Second Answer Cadence
                             </div>
                             <ul class="clean-list">
-                                <li><strong>15s (Context &amp; Scale):</strong> State the company, the problem, and why it was high-stakes (e.g., <em>"At Okta, migrating 2TB of live auth records..."</em>).</li>
-                                <li><strong>15s (Your Direct Role):</strong> State what you personally owned (e.g., <em>"I led the architecture and coordinated with 3 product teams..."</em>).</li>
-                                <li><strong>40s (Technical &amp; Leadership Action):</strong> 2-3 specific architectural choices (e.g., <em>"1-thread-per-partition 5% WCU cap, S3 checkpointing..."</em>).</li>
-                                <li><strong>20s (Metrics &amp; Learning):</strong> Quantifiable impact + hindsight reflection (e.g., <em>"0 downtime, and what I learned in hindsight was..."</em>).</li>
+                                <li><strong>15s (Context &amp; Scale):</strong> State company, problem, and why it was high-stakes (e.g., <em>"At Okta, 10k read / 100 write TPS, 1.05KB records crossing 1KB WCU boundary..."</em>).</li>
+                                <li><strong>15s (Your Direct Role):</strong> State what you personally owned (e.g., <em>"I architected the Go streaming ETL pipeline, shipped dual-writing to prod, and led the strategic pivot..."</em>).</li>
+                                <li><strong>40s (Technical &amp; Leadership Action):</strong> 2-3 specific architectural choices (e.g., <em>"1KB WCU boundary drop, S3 export for 0 RCU, 1-thread-per-partition 5% WCU cap..."</em>).</li>
+                                <li><strong>20s (Metrics &amp; Learning):</strong> Quantifiable impact + strategic takeaway (e.g., <em>"2x batch throughput, and knowing when to pull the plug to align with Aurora DSQL"</em>).</li>
                             </ul>
                         </div>
 
